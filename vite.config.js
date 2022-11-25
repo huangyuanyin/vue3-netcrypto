@@ -16,7 +16,7 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "src")
       }
     },
-    base: "/netapv/",
+    base: "/netcrypto/",
     build: {
       chunkSizeWarningLimit: 1500000,
       outDir: "dist",
