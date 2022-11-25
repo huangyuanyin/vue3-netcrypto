@@ -9,8 +9,13 @@
     <!-- <router-view></router-view> -->
     <router-view v-slot="{ Component }">
       <keep-alive>
-        <component :is="Component" :key="$route.matched[2].path" v-if="shouldCache && $route.meta.keepAlive" keepAlive
-          :rootKey="$route.matched[2].path" />
+        <component
+          :is="Component"
+          :key="$route.matched[2].path"
+          v-if="shouldCache && $route.meta.keepAlive"
+          keepAlive
+          :rootKey="$route.matched[2].path"
+        />
       </keep-alive>
       <component :is="Component" :key="$route.matched[2].path" v-if="!keepAlive && !$route.meta.keepAlive" />
     </router-view>
@@ -18,27 +23,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, reactive, ref } from "vue";
-import { useRouter } from "vue-router";
+import { defineComponent, reactive, ref } from 'vue'
+import { useRouter } from 'vue-router'
 // import TestMenuVue from "../../components/CollapseMenu.vue";
-import CollapseMenu from "../../components/CollapseMenu.vue";
-import Breadcrumb from "../../components/Breadcrumb.vue";
-import { APVAutoMenuData } from "@/data/menu";
+import CollapseMenu from '../../components/CollapseMenu.vue'
+import Breadcrumb from '../../components/Breadcrumb.vue'
+import { APVAutoMenuData } from '@/data/menu'
 export default defineComponent({
   components: {
     // TestMenuVue,
     CollapseMenu,
-    Breadcrumb,
+    Breadcrumb
   },
   props: {
     keepAlive: {
       type: Boolean,
-      default: false,
+      default: false
     },
     rootKey: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   computed: {
     shouldCache() {
@@ -46,16 +51,14 @@ export default defineComponent({
     }
   },
   setup() {
-    const router = useRouter();
-    const menuList = ref(APVAutoMenuData);
+    const router = useRouter()
+    const menuList = ref(APVAutoMenuData)
     return {
       router,
-      menuList,
-    };
-  },
-});
+      menuList
+    }
+  }
+})
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

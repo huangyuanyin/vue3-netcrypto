@@ -2,8 +2,12 @@
   <div class="drawer-wrapper">
     <el-drawer v-model="isDrawer" :direction="direction" :append-to-body="false" :z-index="-1" :with-header="false">
       <el-menu default-active="POCTest" class="el-menu-vertical-demo" @select="handleSelect" router>
-        <el-menu-item v-for="(item, index) in menuList" :key="'menuList' + index" :index="item.path"
-          :disabled="item.title == '产品与服务' ? true : false">
+        <el-menu-item
+          v-for="(item, index) in menuList"
+          :key="'menuList' + index"
+          :index="item.path"
+          :disabled="item.title == '产品与服务' ? true : false"
+        >
           <el-icon>
             <Setting v-if="item.title != '产品与服务'" />
           </el-icon>
@@ -23,17 +27,10 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from "vue";
-import {
-  Document,
-  Menu as IconMenu,
-  Location,
-  Setting,
-  ArrowRight,
-  Close,
-} from "@element-plus/icons-vue";
-import { useRouter } from "vue-router";
-import { useAppStore } from "../store/modules/app";
+import { defineComponent, ref, computed } from 'vue'
+import { Document, Menu as IconMenu, Location, Setting, ArrowRight, Close } from '@element-plus/icons-vue'
+import { useRouter } from 'vue-router'
+import { useAppStore } from '../store/modules/app'
 export default defineComponent({
   components: {
     IconMenu,
@@ -41,43 +38,43 @@ export default defineComponent({
     Location,
     Setting,
     ArrowRight,
-    Close,
+    Close
   },
   props: {
     drawer: {
       type: Boolean,
-      default: false,
-    },
+      default: false
+    }
   },
   setup(props, { emit }) {
-    const router = useRouter();
-    const store = useAppStore();
+    const router = useRouter()
+    const store = useAppStore()
     const menuList = ref([
-      { path: "", title: "产品与服务" },
-      { path: "/POCTest", title: "POC测试" },
-      { path: "/test", title: "测试" },
-    ]);
-    const direction = ref("ltr");
+      { path: '', title: '产品与服务' },
+      { path: '/POCTest', title: 'POC测试' },
+      { path: '/test', title: '测试' }
+    ])
+    const direction = ref('ltr')
     const isDrawer = computed({
       get() {
-        return props.drawer;
+        return props.drawer
       },
       set(value) {
-        emit("changeDrawer", value);
-        return value;
-      },
-    });
+        emit('changeDrawer', value)
+        return value
+      }
+    })
     // 切换菜单栏
-    const handleSelect = (path) => {
+    const handleSelect = path => {
       router.push({
-        path: path,
-      });
-      store.isCollapse = false;
-      isDrawer.value = false;
-    };
+        path: path
+      })
+      store.isCollapse = false
+      isDrawer.value = false
+    }
     const handleClose = () => {
-      isDrawer.value = false;
-    };
+      isDrawer.value = false
+    }
     return {
       router,
       store,
@@ -85,15 +82,14 @@ export default defineComponent({
       direction,
       isDrawer,
       handleSelect,
-      handleClose,
-    };
-  },
-});
+      handleClose
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>
 .drawer-wrapper {
-
   :deep(.el-drawer__header) {
     margin-bottom: 0px;
     padding: 0px;

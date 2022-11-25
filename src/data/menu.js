@@ -1,58 +1,58 @@
 export const cheshiMenuData = [
   {
-    id: "01",
-    title: "测试",
+    id: '01',
+    title: '测试',
     path: null,
     isDisabled: true,
     type: 1,
-    children: [],
+    children: []
   },
   {
-    id: "02",
-    title: "概览",
-    path: "/test/overview",
+    id: '02',
+    title: '概览',
+    path: '/test/overview',
     isDisabled: false,
-    children: [],
+    children: []
   },
   {
-    id: "03",
-    title: "测试管理",
+    id: '03',
+    title: '测试管理',
     path: null,
     isDisabled: false,
     children: [
       {
-        id: "0301",
-        title: "测试一",
-        path: "/ceshiOne",
+        id: '0301',
+        title: '测试一',
+        path: '/ceshiOne',
         isDisabled: false,
-        children: [],
-      },
-    ],
-  },
-];
+        children: []
+      }
+    ]
+  }
+]
 
 export const APVAutoMenuData = [
   {
-    id: "01",
-    title: "测试工具",
+    id: '01',
+    title: '测试工具',
     path: null,
     isDisabled: true,
-    children: [],
+    children: []
   },
   {
-    id: "02",
-    title: "概览",
-    path: "/Netcrypto/overview",
-    icon: "House",
+    id: '02',
+    title: '概览',
+    path: '/Netcrypto/overview',
+    icon: 'House',
     isDisabled: false,
-    children: [],
+    children: []
   },
   {
-    id: "0301",
-    title: "密码服务",
-    path: "/Netcrypto/passwordService",
-    icon: "School",
+    id: '0301',
+    title: '密码服务',
+    path: '/Netcrypto/passwordService',
+    icon: 'School',
     isDisabled: false,
-    children: [],
+    children: []
   }
-];
+]

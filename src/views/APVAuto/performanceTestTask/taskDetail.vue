@@ -7,14 +7,7 @@
         </el-icon>
         <span>创建任务</span>
       </div>
-      <el-form
-        :inline="false"
-        :model="taskForm"
-        ref="taskRuleFormRef"
-        :rules="taskFormRules"
-        class="task-form"
-        label-width="80px"
-      >
+      <el-form :inline="false" :model="taskForm" ref="taskRuleFormRef" :rules="taskFormRules" class="task-form" label-width="80px">
         <el-form-item label="任务名称" prop="taskName">
           <el-input v-model="taskForm.taskName" placeholder="请输入..." />
         </el-form-item>
@@ -44,9 +37,7 @@
         </el-form-item>
         <el-form-item class="button-wrap">
           <el-button @click="onCancel(taskRuleFormRef)">取消</el-button>
-          <el-button type="primary" @click="onAddTaskDorm(taskRuleFormRef)"
-            >创建任务</el-button
-          >
+          <el-button type="primary" @click="onAddTaskDorm(taskRuleFormRef)">创建任务</el-button>
         </el-form-item>
       </el-form>
     </el-card>
@@ -54,54 +45,48 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, reactive } from "vue";
-import { instrumentManagementData } from "./data.js";
-import { Back } from "@element-plus/icons-vue";
-import type { FormInstance, FormRules } from "element-plus";
-import { useRouter } from "vue-router";
+import { defineComponent, ref, reactive } from 'vue'
+import { instrumentManagementData } from './data.js'
+import { Back } from '@element-plus/icons-vue'
+import type { FormInstance, FormRules } from 'element-plus'
+import { useRouter } from 'vue-router'
 export default defineComponent({
   components: {
-    Back,
+    Back
   },
   setup() {
-    const router = useRouter();
-    const tableData = ref(instrumentManagementData);
+    const router = useRouter()
+    const tableData = ref(instrumentManagementData)
     const taskForm = reactive({
-      taskName: "",
-      userName: "",
-      password: "",
-      interface: "",
-      status: "",
-    });
-    const taskRuleFormRef = ref<FormInstance>();
+      taskName: '',
+      userName: '',
+      password: '',
+      interface: '',
+      status: ''
+    })
+    const taskRuleFormRef = ref<FormInstance>()
     const taskFormRules = reactive<FormRules>({
-      taskName: [{ required: true, message: "ip不能为空", trigger: "blur" }],
-      userName: [
-        { required: true, message: "用户名不能为空", trigger: "blur" },
-      ],
-      password: [{ required: true, message: "密码不能为空", trigger: "blur" }],
-      interface: [
-        { required: true, message: "请填写设备接口情况", trigger: "blur" },
-      ],
-      status: [
-        { required: true, message: "请选择设备状态", trigger: "change" },
-      ],
-    });
+      taskName: [{ required: true, message: 'ip不能为空', trigger: 'blur' }],
+      userName: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
+      password: [{ required: true, message: '密码不能为空', trigger: 'blur' }],
+      interface: [{ required: true, message: '请填写设备接口情况', trigger: 'blur' }],
+      status: [{ required: true, message: '请选择设备状态', trigger: 'change' }]
+    })
     const onCancel = (formEl: FormInstance | undefined) => {
-      if (!formEl) return;
-      formEl.resetFields();
-      router.go(-1);
-    };
+      if (!formEl) return
+      formEl.resetFields()
+      router.go(-1)
+    }
     const onAddTaskDorm = async (formEl: FormInstance | undefined) => {
-      if (!formEl) return;
+      if (!formEl) return
       await formEl.validate((valid, fields) => {
         if (valid) {
-          console.log("submit!");
+          console.log('submit!')
         } else {
-          console.log("error submit!", fields);
+          console.log('error submit!', fields)
         }
-      });
-    };
+      })
+    }
     return {
       router,
       tableData,
@@ -109,10 +94,10 @@ export default defineComponent({
       onAddTaskDorm,
       onCancel,
       taskRuleFormRef,
-      taskFormRules,
-    };
-  },
-});
+      taskFormRules
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

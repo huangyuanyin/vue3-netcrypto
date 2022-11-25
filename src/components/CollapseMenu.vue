@@ -1,7 +1,13 @@
 <template>
   <el-aside>
-    <el-menu :default-active="defaultActiveIndex" class="el-menu" :collapse="store.isCollapse"
-      active-text-color="rgb(85, 85, 85)" text-color="rgb(51, 51, 51)" router>
+    <el-menu
+      :default-active="defaultActiveIndex"
+      class="el-menu"
+      :collapse="store.isCollapse"
+      active-text-color="rgb(85, 85, 85)"
+      text-color="rgb(51, 51, 51)"
+      router
+    >
       <template v-for="(item, index) in menuList" :key="index + 'menu'">
         <!-- 一级菜单(无子级) -->
         <el-menu-item v-if="!item.children.length" :index="item.path" :disabled="item.isDisabled">
@@ -35,28 +41,29 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted, ref } from "vue";
-import { Document, Menu as IconMenu, Location, School, DataLine, House } from "@element-plus/icons-vue";
-import { useAppStore } from "../store/modules/app/index";
+import { defineComponent, onMounted, ref } from 'vue'
+import { Document, Menu as IconMenu, Location, School, DataLine, House } from '@element-plus/icons-vue'
+import { useAppStore } from '../store/modules/app/index'
 export default defineComponent({
   components: { Document, IconMenu, Location, School, House, DataLine },
   props: {
     menuList: {
       type: Array,
-      default: () => [],
-    },
+      default: () => []
+    }
   },
   setup() {
-    const store = useAppStore();
-    const defaultActiveIndex = ref("")
+    const store = useAppStore()
+    const defaultActiveIndex = ref('')
     onMounted(() => {
-      defaultActiveIndex.value = window.location.hash.replace("#", "")
-    });
+      defaultActiveIndex.value = window.location.hash.replace('#', '')
+    })
     return {
-      store, defaultActiveIndex
-    };
-  },
-});
+      store,
+      defaultActiveIndex
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

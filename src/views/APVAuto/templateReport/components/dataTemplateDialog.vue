@@ -20,9 +20,7 @@
         <el-input v-model="dialogData.ipversion" disabled />
       </el-form-item>
       <el-form-item label="选择导出参数" :label-width="formLabelWidth">
-        <el-checkbox v-model="checkAll" :indeterminate="isIndeterminate" @change="handleCheckAllChange">
-          导出全部参数
-        </el-checkbox>
+        <el-checkbox v-model="checkAll" :indeterminate="isIndeterminate" @change="handleCheckAllChange"> 导出全部参数 </el-checkbox>
         <el-checkbox-group v-model="checkedQuery" @change="handleCheckedQuerysChange">
           <el-checkbox v-for="item in checkedList" :key="item" :label="item">
             {{ item }}
@@ -39,7 +37,7 @@
   </el-dialog>
 </template>
 <script lang="ts">
-import { defineComponent, ref, onMounted } from "vue";
+import { defineComponent, ref, onMounted } from 'vue'
 export default defineComponent({
   emits: ['closeDialog'],
   props: {
@@ -56,8 +54,21 @@ export default defineComponent({
     const checkAll = ref(false)
     const isIndeterminate = ref(true)
     const checkedQuery = ref(['cc', 'cps'])
-    const checkedList = ['cc', 'cps', 'cpu', 'dut_cc', 'dut_cps', 'dut_rps', 'response', 'ssl_ae', 'ssl_se', 'throughput', 'tps', 'unsuccessful']
-    const formLabelWidth = "140px";
+    const checkedList = [
+      'cc',
+      'cps',
+      'cpu',
+      'dut_cc',
+      'dut_cps',
+      'dut_rps',
+      'response',
+      'ssl_ae',
+      'ssl_se',
+      'throughput',
+      'tps',
+      'unsuccessful'
+    ]
+    const formLabelWidth = '140px'
     const handleCheckAllChange = (val: boolean) => {
       checkedQuery.value = val ? checkedList : []
       isIndeterminate.value = false
@@ -79,9 +90,9 @@ export default defineComponent({
       closeDialog,
       handleCheckAllChange,
       handleCheckedQuerysChange
-    };
-  },
-});
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

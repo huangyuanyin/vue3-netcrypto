@@ -32,7 +32,7 @@ export default defineComponent({
           return new tsWorker()
         }
         return new EditorWorker()
-      },
+      }
     }
     let editor: monaco.editor.IStandaloneCodeEditor
     const codeEditBox = ref()
@@ -40,18 +40,18 @@ export default defineComponent({
     const init = () => {
       monaco.languages.typescript.javascriptDefaults.setDiagnosticsOptions({
         noSemanticValidation: true,
-        noSyntaxValidation: false,
+        noSyntaxValidation: false
       })
       monaco.languages.typescript.javascriptDefaults.setCompilerOptions({
         target: monaco.languages.typescript.ScriptTarget.ES2020,
-        allowNonTsExtensions: true,
+        allowNonTsExtensions: true
       })
 
       editor = monaco.editor.create(codeEditBox.value, {
         value: props.modelValue,
         language: props.language,
         theme: props.theme,
-        ...props.options,
+        ...props.options
       })
 
       // 监听值的变化
@@ -99,7 +99,7 @@ export default defineComponent({
     })
 
     return { codeEditBox }
-  },
+  }
 })
 </script>
 

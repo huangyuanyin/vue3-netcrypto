@@ -10,44 +10,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="1">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="2">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -59,30 +45,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="3">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -94,22 +78,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -126,44 +108,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="11">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="21">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -175,30 +143,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="31">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -210,22 +176,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -242,44 +206,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="12">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="22">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -291,30 +241,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="23">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -326,22 +274,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -358,44 +304,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="31">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="32">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -407,30 +339,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="33">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -442,22 +372,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -474,44 +402,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="41">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="42">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -523,30 +437,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="43">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -558,22 +470,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -590,44 +500,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="51">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="52">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -639,30 +535,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="53">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -674,22 +568,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -706,44 +598,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="61">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="62">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -755,30 +633,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="63">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -790,22 +666,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -822,44 +696,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="71">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="72">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -871,30 +731,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="73">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -906,22 +764,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -938,44 +794,30 @@
         <el-collapse v-model="activeNames" @change="handleChange">
           <el-collapse-item name="781">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Postcard />
-              </el-icon>硬件参数
+              <el-icon style="margin-right: 3px">
+                <Postcard /> </el-icon
+              >硬件参数
             </template>
             <div class="content">
+              <div class="content-item"><span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span></div>
+              <div class="content-item"><span class="item-left">Baseboard: </span><span class="item-rgiht"></span></div>
+              <div class="content-item"><span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
+              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium G4560</span></div>
               <div class="content-item">
-                <span class="item-left">Version: </span><span class="item-rgiht">APV10.4</span>
+                <span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
+              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1* CNN5530-550</span></div>
               <div class="content-item">
-                <span class="item-left">Baseboard: </span><span class="item-rgiht"></span>
-              </div>
-              <div class="content-item">
-                <span class="item-left">CPU: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">Memory: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">NIC: </span><span class="item-rgiht">1* Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">bios/ipmi version: </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
-              </div>
-              <div class="content-item"><span class="item-left">SSL HW: </span><span class="item-rgiht">1*
-                  CNN5530-550</span>
-              </div>
-              <div class="content-item"><span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel
-                  Pentium
-                  G4560</span>
+                <span class="item-left">Compression HW: </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item name="82">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <Cpu />
-              </el-icon>性能指标: X8X0_L4_L7
+              <el-icon style="margin-right: 3px">
+                <Cpu /> </el-icon
+              >性能指标: X8X0_L4_L7
             </template>
             <div class="content">
               <div class="content-item">
@@ -987,30 +829,28 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
           <el-collapse-item title="性能指标: X8X0_SSL" name="83">
             <template #title>
-              <el-icon style="margin-right: 3px;">
-                <DataAnalysis />
-              </el-icon>性能指标: X8X0_SSL
+              <el-icon style="margin-right: 3px">
+                <DataAnalysis /> </el-icon
+              >性能指标: X8X0_SSL
             </template>
             <div class="content">
               <div class="content-item">
@@ -1022,22 +862,20 @@
               <div class="content-item">
                 <span class="item-left">RSA CC (2K cert, AES128-SHA256): </span><span class="item-rgiht">500K</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPS (2K cert): </span><span
-                  class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPS (2K cert): </span><span class="item-rgiht">27K, CNN5560-550, AES256-GCM-SHA384</span>
               </div>
-              <div class="content-item"><span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1*
-                  Intel Pentium
-                  G4560</span>
+              <div class="content-item">
+                <span class="item-left">双向RSA TPUT (2K cert): </span><span class="item-rgiht">1* Intel Pentium G4560</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">2.25K</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPS 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">2.25K</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">1*
-                  CNN5530-550</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA TPUT 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">1* CNN5530-550</span>
               </div>
-              <div class="content-item"><span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span
-                  class="item-rgiht">250k</span>
+              <div class="content-item">
+                <span class="item-left">SoftRSA CC 2K (2K cert, AES128-SHA256): </span><span class="item-rgiht">250k</span>
               </div>
             </div>
           </el-collapse-item>
@@ -1123,7 +961,7 @@ const handleChange = (val: string[]) => {
         max-width: 70%;
         min-width: 70px;
         margin-right: 5px;
-        color: #3366FF;
+        color: #3366ff;
         font-weight: 900;
         overflow: hidden;
         white-space: nowrap;
@@ -1132,7 +970,7 @@ const handleChange = (val: string[]) => {
       }
 
       .item-rgiht {
-        color: #8B864E;
+        color: #8b864e;
         max-width: 100%;
         margin-right: 8px;
         overflow: hidden;

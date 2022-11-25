@@ -1,18 +1,18 @@
 export const options = [
   {
     value: 'pass',
-    label: 'pass',
+    label: 'pass'
   },
   {
     value: 'pass_issue',
-    label: 'pass_issue',
+    label: 'pass_issue'
   },
   {
     value: 'fail',
-    label: 'fail',
+    label: 'fail'
   },
   {
     value: 'fail_issue',
-    label: 'fail_issue',
-  },
+    label: 'fail_issue'
+  }
 ]

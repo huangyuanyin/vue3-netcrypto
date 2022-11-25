@@ -1,5 +1,5 @@
-import axios from "@/utils/request.js";
+import axios from '@/utils/request.js'
 
-export function getInfo(){
-    return axios.post('/admin/getinfo')
+export function getInfo() {
+  return axios.post('/admin/getinfo')
 }

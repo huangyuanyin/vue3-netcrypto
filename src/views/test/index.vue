@@ -10,25 +10,24 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref } from 'vue'
 // import TestMenuVue from "../../components/CollapseMenu.vue";
-import CollapseMenu from "../../components/CollapseMenu.vue";
-import Breadcrumb from "../../components/Breadcrumb.vue";
-import { cheshiMenuData } from "../../data/menu";
+import CollapseMenu from '../../components/CollapseMenu.vue'
+import Breadcrumb from '../../components/Breadcrumb.vue'
+import { cheshiMenuData } from '../../data/menu'
 export default defineComponent({
   components: {
     // TestMenuVue,
     CollapseMenu,
-    Breadcrumb,
+    Breadcrumb
   },
   setup() {
-    const menuList = ref(cheshiMenuData);
+    const menuList = ref(cheshiMenuData)
     return {
-      menuList,
-    };
-  },
-});
+      menuList
+    }
+  }
+})
 </script>
 
-<style lang="scss" scoped>
-</style>
+<style lang="scss" scoped></style>

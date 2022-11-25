@@ -10,7 +10,7 @@
     </el-card>
     <el-card class="chart-card" style="margin-top: 20px">
       <div class="title">数据分析(表格)</div>
-      <el-table :data="dataList" border stripe style="width: 100%;margin-top: 20px;">
+      <el-table :data="dataList" border stripe style="width: 100%; margin-top: 20px">
         <el-table-column prop="id" align="center" />
         <el-table-column prop="cc" label="cc" align="center" />
         <el-table-column prop="cps" label="cps" align="center" />
@@ -28,8 +28,8 @@
     <el-card class="chart-card" style="margin-top: 20px">
       <div class="title">数据分析(图表)</div>
       <div class="content">
-        <template v-for="(item, index) in chartList" :key="''+ index">
-          <div :id="item.id" style="width: 25%;height:400px;"></div>
+        <template v-for="(item, index) in chartList" :key="'' + index">
+          <div :id="item.id" style="width: 25%; height: 400px"></div>
         </template>
       </div>
     </el-card>
@@ -361,7 +361,7 @@ export default defineComponent({
   .title {
     margin-bottom: 10px;
     font-size: 20px;
-    color: #BBBB;
+    color: #bbbb;
   }
 
   :deep(.el-card__body) {

@@ -3,7 +3,7 @@
 </template>
 <script>
 import Terminal from '../config/Xterm'
-import baseUrl from "@/config/api";
+import baseUrl from '@/config/api'
 export default {
   name: 'Console',
   props: {
@@ -18,7 +18,7 @@ export default {
     },
     termmailInfo: {
       type: Object,
-      default: () => { }
+      default: () => {}
     }
   },
   data() {
@@ -37,7 +37,7 @@ export default {
     },
     closeRealTerminal() {
       console.log('close')
-    },
+    }
   },
   mounted(props) {
     const { uname, passw, ip } = this.termmailInfo
@@ -45,22 +45,24 @@ export default {
     let terminalContainer = document.getElementById('terminal')
     this.term = new Terminal({
       cursorBlink: true,
-      rendererType: "canvas", //渲染类型
+      rendererType: 'canvas', //渲染类型
       cursorBlink: true, //光标闪烁
       // cursorStyle: "underline", //光标样式
       scrollback: 50, //终端中的回滚量
       convertEol: true, //启用时，光标将设置为下一行的开头
       theme: {
-        foreground: "#ECECEC", //字体
-        background: "#000000", //背景色
-        cursor: "help", //设置光标
+        foreground: '#ECECEC', //字体
+        background: '#000000', //背景色
+        cursor: 'help', //设置光标
         lineHeight: 20
       }
     })
     this.term.open(terminalContainer)
     // open websocket
-    this.terminalSocket = new WebSocket(`ws://${baseUrl.Base_APV_XTERM}/terminal/wensock?host_ip=${ip}&host_por=22&user=${uname}&passwd=${passw}`)
-    console.log("dada", this.terminalSocket);
+    this.terminalSocket = new WebSocket(
+      `ws://${baseUrl.Base_APV_XTERM}/terminal/wensock?host_ip=${ip}&host_por=22&user=${uname}&passwd=${passw}`
+    )
+    console.log('dada', this.terminalSocket)
     this.terminalSocket.onopen = this.runRealTerminal
     this.terminalSocket.onclose = this.closeRealTerminal
     this.terminalSocket.onerror = this.errorRealTerminal
@@ -85,4 +87,3 @@ export default {
   }
 }
 </style>
- 

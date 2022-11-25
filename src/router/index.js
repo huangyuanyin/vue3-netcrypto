@@ -1,100 +1,95 @@
-import {
-  createRouter,
-  createWebHistory,
-  createWebHashHistory
-} from "vue-router";
+import { createRouter, createWebHistory, createWebHashHistory } from 'vue-router'
 
-import Layout from "@/views/Layout/index.vue"; // 布局组件 不需要懒加载
+import Layout from '@/views/Layout/index.vue' // 布局组件 不需要懒加载
 
 const routes = [
   {
-    path: "/login",
-    name: "Login",
+    path: '/login',
+    name: 'Login',
     meta: {
-      title: "登录页面",
+      title: '登录页面'
     },
-    component: () => import("@/views/Login/index.vue"),
+    component: () => import('@/views/Login/index.vue')
   },
   {
-    path: "/page",
-    name: "Page",
+    path: '/page',
+    name: 'Page',
     meta: {
-      title: "测试页面",
+      title: '测试页面'
     },
-    component: () => import("@/views/page/card.vue"),
+    component: () => import('@/views/page/card.vue')
   },
   {
-    path: "/",
-    redirect: "/Netcrypto/overview",
-    component: Layout,
+    path: '/',
+    redirect: '/Netcrypto/overview',
+    component: Layout
   },
   {
-    path: "/home",
+    path: '/home',
     component: Layout,
     children: [
       {
-        path: "/Netcrypto",
-        name: "Netcrypto",
+        path: '/Netcrypto',
+        name: 'Netcrypto',
         meta: {
-          title: "测试工具",
+          title: '测试工具'
         },
-        redirect: "/Netcrypto/overview", // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
-        component: () => import("@/views/Netcrypto/index.vue"),
+        redirect: '/Netcrypto/overview', // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
+        component: () => import('@/views/Netcrypto/index.vue'),
         children: [
           {
-            path: "/Netcrypto/overview",
-            name: "Overview",
+            path: '/Netcrypto/overview',
+            name: 'Overview',
             meta: {
-              title: "概览",
+              title: '概览',
               keepAlive: true
             },
-            component: () => import("@/views/Netcrypto/overview/index.vue"),
+            component: () => import('@/views/Netcrypto/overview/index.vue')
           },
           {
-            path: "/Netcrypto/passwordService",
-            name: "PasswordService",
+            path: '/Netcrypto/passwordService',
+            name: 'PasswordService',
             meta: {
-              title: "密码服务",
+              title: '密码服务',
               keepAlive: true
             },
-            component: () =>
-              import("@/views/Netcrypto/passwordService/index.vue"),
-          },
-        ],
+            component: () => import('@/views/Netcrypto/passwordService/index.vue')
+          }
+        ]
       },
       {
-        path: "/test",
-        name: "Test",
+        path: '/test',
+        name: 'Test',
         meta: {
-          title: "测试",
+          title: '测试'
         },
-        redirect: "/test/overview", // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
-        component: () => import("@/views/test/index.vue"),
+        redirect: '/test/overview', // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
+        component: () => import('@/views/test/index.vue'),
         children: [
           {
-            path: "/test/overview",
+            path: '/test/overview',
             meta: {
-              title: "概览",
+              title: '概览'
             },
-            component: () => import("@/views/test/overview.vue"),
-          },
-        ],
-      },
-    ],
+            component: () => import('@/views/test/overview.vue')
+          }
+        ]
+      }
+    ]
   },
   {
-    path: "/:pathMatch(.*)*",
-    name: "NotFound",
+    path: '/:pathMatch(.*)*',
+    name: 'NotFound',
     meta: {
-      title: "404页面",
+      title: '404页面'
     },
-    component: () => import("@/views/exception/404.vue"),
-  },
-];
+    component: () => import('@/views/exception/404.vue')
+  }
+]
 
 const router = createRouter({
   history: createWebHashHistory('/netcrypto/'),
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router

@@ -21,19 +21,19 @@
   </div>
 </template>
 <script>
-import { defineComponent, ref } from "vue";
-import working from "@/assets/working.png";
-import Login from "./components/loginForm.vue";
+import { defineComponent, ref } from 'vue'
+import working from '@/assets/working.png'
+import Login from './components/loginForm.vue'
 export default defineComponent({
   components: {
-    Login,
+    Login
   },
   setup() {
     return {
-      working,
-    };
-  },
-});
+      working
+    }
+  }
+})
 </script>
 
 <style lang="scss" scoped>

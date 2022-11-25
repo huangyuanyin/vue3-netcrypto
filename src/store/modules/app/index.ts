@@ -7,13 +7,13 @@ export const useAppStore = defineStore({
     theme: 'chalk'
   }),
   getters: {
-    getCollapse: (state) => {
+    getCollapse: state => {
       return state.isCollapse
     }
   },
   actions: {
     handleCollapse(status) {
-      status == false ? this.isCollapse = false : this.isCollapse = true
+      status == false ? (this.isCollapse = false) : (this.isCollapse = true)
       return this.isCollapse
     }
   }

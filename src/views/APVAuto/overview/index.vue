@@ -1,26 +1,23 @@
 <template>
-  <div class="overview-wrap" style="height: 100%;">
+  <div class="overview-wrap" style="height: 100%">
     <VersionDetails class="VersionDetails" />
   </div>
 </template>
 
-<script lang='ts' setup>
-import { defineComponent, onMounted, inject, ref, nextTick, defineProps } from "vue";
+<script lang="ts" setup>
+import { defineComponent, onMounted, inject, ref, nextTick, defineProps } from 'vue'
 import VersionDetails from './component/VersionDetails.vue'
 const props = defineProps({
   keepAlive: {
     type: Boolean,
-    default: false,
+    default: false
   },
   rootKey: {
     type: Boolean,
-    default: false,
+    default: false
   }
 })
-onMounted(() => {
-})
+onMounted(() => {})
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
