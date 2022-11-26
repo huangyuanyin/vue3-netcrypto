@@ -158,6 +158,7 @@ const encryHandle = async (formEl: FormInstance | undefined) => {
       let res = await symmEncry(symmForm)
       if (res.code == '1000') {
         result.value = res.data
+        ElMessage.success(res.msg || '加密成功')
       } else {
         ElMessage.error({
           message: res.msg,
@@ -175,6 +176,7 @@ const decryHandle = async (formEl: FormInstance | undefined) => {
       let res = await symmDecry(symmForm)
       if (res.code == '1000') {
         result.value = res.data
+        ElMessage.success(res.msg || '解密成功')
       } else {
         ElMessage.error({
           message: res.msg,

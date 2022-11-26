@@ -5,7 +5,7 @@
         <Symm />
       </el-tab-pane>
       <el-tab-pane label="非对称加解密" name="asymm">
-        <!-- <asymm-com></asymm-com> -->
+        <Asymm />
       </el-tab-pane>
       <el-tab-pane label="散列/哈希" name="hash">
         <!-- <hash-com></hash-com> -->
@@ -22,7 +22,7 @@
 
 <script setup>
 import Symm from '././subEncrypt/symm.vue'
-// const asymm = () => import('./subEncrypt/asymm')
+import Asymm from './subEncrypt/asymm.vue'
 // const hash = () => import('./subEncrypt/hash')
 // const base64 = () => import('./subEncrypt/base64')
 // const url = () => import('./subEncrypt/url')

@@ -52,19 +52,29 @@ export const symmDecry = params => {
 // 	return axios.post(`${getBaseUrl()}/crypto/base64_decode/`, params).then(res => res.data);
 // };
 
-// /*
-// 	非对称加密
-// */
-// export const asymmEncry = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/asymm_encry/`, params).then(res => res.data);
-// };
+/*
+	非对称加密
+*/
+export const asymmEncry = params => {
+	return request({
+		url: '/crypto/asymm_encry/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
-// /*
-// 	非对称解密
-// */
-// export const asymmDecry = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/asymm_decry/`, params).then(res => res.data);
-// };
+/*
+	非对称解密
+*/
+export const asymmDecry = params => {
+	return request({
+		url: '/crypto/asymm_decry/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
 // /*
 // 	URL编码
