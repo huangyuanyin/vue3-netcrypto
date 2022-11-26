@@ -10,9 +10,14 @@ import axios from 'axios'
 /*
 	数据哈希
 */
-// export const dataHash = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/data_hash/`, params).then(res => res.data);
-// };
+export const dataHash = params => {
+	return request({
+		url: '/crypto/data_hash/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
 /*
 	对称加密

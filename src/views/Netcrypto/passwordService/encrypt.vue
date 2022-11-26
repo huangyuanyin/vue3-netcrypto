@@ -8,7 +8,7 @@
         <Asymm />
       </el-tab-pane>
       <el-tab-pane label="散列/哈希" name="hash">
-        <!-- <hash-com></hash-com> -->
+        <Hash />
       </el-tab-pane>
       <el-tab-pane label="Base64" name="base64">
         <!-- <base64-com></base64-com> -->
@@ -23,7 +23,7 @@
 <script setup>
 import Symm from '././subEncrypt/symm.vue'
 import Asymm from './subEncrypt/asymm.vue'
-// const hash = () => import('./subEncrypt/hash')
+import Hash from './subEncrypt/hash.vue'
 // const base64 = () => import('./subEncrypt/base64')
 // const url = () => import('./subEncrypt/url')
 import { ref } from 'vue'
