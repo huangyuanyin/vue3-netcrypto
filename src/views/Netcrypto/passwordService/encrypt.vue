@@ -1,0 +1,32 @@
+<template>
+  <div>
+    <el-tabs v-model="activeName">
+      <el-tab-pane label="对称加解密" name="symm">
+        <Symm />
+      </el-tab-pane>
+      <el-tab-pane label="非对称加解密" name="asymm">
+        <!-- <asymm-com></asymm-com> -->
+      </el-tab-pane>
+      <el-tab-pane label="散列/哈希" name="hash">
+        <!-- <hash-com></hash-com> -->
+      </el-tab-pane>
+      <el-tab-pane label="Base64" name="base64">
+        <!-- <base64-com></base64-com> -->
+      </el-tab-pane>
+      <el-tab-pane label="URL编码/解码" name="url">
+        <!-- <url-com></url-com> -->
+      </el-tab-pane>
+    </el-tabs>
+  </div>
+</template>
+
+<script setup>
+import Symm from '././subEncrypt/symm.vue'
+// const asymm = () => import('./subEncrypt/asymm')
+// const hash = () => import('./subEncrypt/hash')
+// const base64 = () => import('./subEncrypt/base64')
+// const url = () => import('./subEncrypt/url')
+import { ref } from 'vue'
+
+const activeName = ref('symm')
+</script>
