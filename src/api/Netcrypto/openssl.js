@@ -91,19 +91,29 @@ export const asymmDecry = params => {
 	})
 };
 
-// /*
-// 	URL编码
-// */
-// export const urlEncode = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/url_encode/`, params).then(res => res.data);
-// };
+/*
+	URL编码
+*/
+export const urlEncode = params => {
+	return request({
+		url: '/crypto/url_encode/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
-// /*
-// 	URL解码
-// */
-// export const urlDecode = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/url_decode/`, params).then(res => res.data);
-// };
+/*
+	URL解码
+*/
+export const urlDecode = params => {
+	return request({
+		url: '/crypto/url_decode/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
 
 // // ================================  签名/验签 ================================//

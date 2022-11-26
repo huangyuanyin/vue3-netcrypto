@@ -14,7 +14,7 @@
         <Base64 />
       </el-tab-pane>
       <el-tab-pane label="URL编码/解码" name="url">
-        <!-- <url-com></url-com> -->
+        <Url />
       </el-tab-pane>
     </el-tabs>
   </div>
@@ -25,8 +25,7 @@ import Symm from '././subEncrypt/symm.vue'
 import Asymm from './subEncrypt/asymm.vue'
 import Hash from './subEncrypt/hash.vue'
 import Base64 from './subEncrypt/base64.vue'
-// const base64 = () => import('./subEncrypt/base64')
-// const url = () => import('./subEncrypt/url')
+import Url from './subEncrypt/url.vue'
 import { ref } from 'vue'
 
 const activeName = ref('symm')
