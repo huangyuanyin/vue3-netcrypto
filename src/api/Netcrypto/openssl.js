@@ -43,19 +43,29 @@ export const symmDecry = params => {
 	})
 };
 
-// /*
-// 	base64编码
-// */
-// export const base64Encode = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/base64_encode/`, params).then(res => res.data);
-// };
+/*
+	base64编码
+*/
+export const base64Encode = params => {
+	return request({
+		url: '/crypto/base64_encode/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
-// /*
-// 	base64解码
-// */
-// export const base64Decode = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/base64_decode/`, params).then(res => res.data);
-// };
+/*
+	base64解码
+*/
+export const base64Decode = params => {
+	return request({
+		url: '/crypto/base64_decode/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
 /*
 	非对称加密
