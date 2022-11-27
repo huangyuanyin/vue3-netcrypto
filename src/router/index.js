@@ -21,7 +21,7 @@ const routes = [
   },
   {
     path: '/',
-    redirect: '/Netcrypto/overview',
+    redirect: '/overview',
     component: Layout
   },
   {
@@ -34,11 +34,11 @@ const routes = [
         meta: {
           title: '测试工具'
         },
-        redirect: '/Netcrypto/overview', // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
+        redirect: '/overview', // 该配置是若点击选择一级菜单时，默认选中并跳转到该一级菜单下的第一个二级菜单
         component: () => import('@/views/Netcrypto/index.vue'),
         children: [
           {
-            path: '/Netcrypto/overview',
+            path: '/overview',
             name: 'Overview',
             meta: {
               title: '概览',
@@ -47,7 +47,7 @@ const routes = [
             component: () => import('@/views/Netcrypto/overview/index.vue')
           },
           {
-            path: '/Netcrypto/passwordService',
+            path: '/passwordService',
             name: 'PasswordService',
             meta: {
               title: '密码服务',

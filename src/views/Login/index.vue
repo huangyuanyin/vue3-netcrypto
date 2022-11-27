@@ -20,20 +20,11 @@
     </div>
   </div>
 </template>
-<script>
-import { defineComponent, ref } from 'vue'
+
+<script lang="ts" setup>
+import { ref } from 'vue'
 import working from '@/assets/working.png'
 import Login from './components/loginForm.vue'
-export default defineComponent({
-  components: {
-    Login
-  },
-  setup() {
-    return {
-      working
-    }
-  }
-})
 </script>
 
 <style lang="scss" scoped>

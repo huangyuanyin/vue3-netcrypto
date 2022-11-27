@@ -15,66 +15,53 @@
         />
       </el-form-item>
       <el-form-item>
-        <el-button class="submit-style" type="primary" @click="onLogin(ruleFormRef)" :loading="loading"> Login </el-button>
+        <el-button class="submit-style" type="primary" @click="onLogin(ruleFormRef)" :loading="loading"> 登录 </el-button>
       </el-form-item>
     </el-form>
   </div>
 </template>
 
-<script lang="ts">
+<script lang="ts" setup>
 import { defineComponent, ref, reactive } from 'vue'
 import { useRouter } from 'vue-router'
 import { Lock, Avatar } from '@element-plus/icons-vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { useUserStore } from '@/store/modules/user'
-export default defineComponent({
-  setup() {
-    const router = useRouter()
-    const loading = ref(false)
-    const store = useUserStore()
-    const ruleFormRef = ref<FormInstance>()
-    const userInfo = ref({})
-    const rules = reactive<FormRules>({
-      username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-      password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
-    })
-    // 登录表单
-    const formData = reactive({
-      username: '',
-      password: ''
-    })
-    // 登录
-    const onLogin = async (formEl: FormInstance | undefined) => {
-      if (!formEl) return
-      await formEl.validate((valid, fields) => {
-        if (valid) {
-          loading.value = true
-          store
-            .Login(formData)
-            .then(() => {
-              router.replace('/')
-              // router.replace("/POCTest/overview")
-            })
-            .finally(() => {
-              loading.value = false
-            })
-        } else {
-          console.log('error submit!', fields)
-        }
-      })
-    }
-    return {
-      Lock,
-      Avatar,
-      formData,
-      rules,
-      loading,
-      ruleFormRef,
-      onLogin,
-      userInfo
-    }
-  }
+
+const router = useRouter()
+const loading = ref(false)
+const store = useUserStore()
+const userInfo = ref({})
+// 登录表单
+const formData = reactive({
+  username: '',
+  password: ''
 })
+const ruleFormRef = ref<FormInstance>()
+const rules = reactive<FormRules>({
+  username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+  password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+})
+
+// 登录
+const onLogin = async (formEl: FormInstance | undefined) => {
+  if (!formEl) return
+  await formEl.validate((valid, fields) => {
+    if (valid) {
+      loading.value = true
+      store
+        .Login(formData)
+        .then(() => {
+          router.replace('/')
+        })
+        .finally(() => {
+          loading.value = false
+        })
+    } else {
+      console.log('error submit!', fields)
+    }
+  })
+}
 </script>
 
 <style lang="scss" scoped>

@@ -42,7 +42,7 @@ export const APVAutoMenuData = [
   {
     id: '02',
     title: '概览',
-    path: '/Netcrypto/overview',
+    path: '/overview',
     icon: 'House',
     isDisabled: false,
     children: []
@@ -50,7 +50,7 @@ export const APVAutoMenuData = [
   {
     id: '0301',
     title: '密码服务',
-    path: '/Netcrypto/passwordService',
+    path: '/passwordService',
     icon: 'School',
     isDisabled: false,
     children: []
