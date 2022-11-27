@@ -168,9 +168,14 @@ export const downFile = params => {
 	})
 };
 
-// /*
-// 	提取私钥
-// */
-// export const getPriKey = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/prikey_get/`, params).then(res => res.data);
-// };
+/*
+	提取私钥
+*/
+export const getPriKey = params => {
+	return request({
+		url: '/crypto/prikey_get/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
