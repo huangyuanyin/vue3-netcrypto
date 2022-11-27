@@ -118,19 +118,29 @@ export const urlDecode = params => {
 
 // // ================================  签名/验签 ================================//
 
-// /*
-// 	裸签名
-// */
-// export const rawSign = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/raw_sign/`, params).then(res => res.data);
-// };
+/*
+	裸签名
+*/
+export const rawSign = params => {
+	return request({
+		url: '/crypto/raw_sign/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
-// /*
-// 	裸验签
-// */
-// export const rawVerify = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/raw_verify/`, params).then(res => res.data);
-// };
+/*
+	裸验签
+*/
+export const rawVerify = params => {
+	return request({
+		url: '/crypto/raw_verify/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
 // // ================================  转换工具 ================================//
 
