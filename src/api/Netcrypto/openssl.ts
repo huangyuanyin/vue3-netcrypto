@@ -1,5 +1,17 @@
 import request from '@/utils/request.js'
-import axios from 'axios'
+import axios, { Axios, AxiosResponse, AxiosRequestConfig } from 'axios'
+
+declare module "axios" {
+	interface AxiosResponse<T = any> {
+		errorinfo: null;
+		code: null;
+		msg: '',
+		data: T,
+		url:'',
+	}
+	export function create(config?: AxiosRequestConfig): AxiosInstance;
+}
+
 // import Vue from 'vue'
 // function getBaseUrl() {
 // 	return Vue.prototype.BASE_URL
