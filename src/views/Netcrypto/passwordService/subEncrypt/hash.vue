@@ -20,7 +20,7 @@
         <el-button type="primary" @click="algHandle('SHA384')">SHA384</el-button>
         <el-button type="primary" @click="algHandle('MD5')">MD5</el-button>
         <el-button type="primary" @click="algHandle('MD4')">MD4</el-button>
-        <el-select v-model="hashForm.base" style="float: right; margin-right: 5%">
+        <el-select v-model="hashForm.base" style="float: right; margin-left: 10px">
           <el-option v-for="(item, index) in bases" :key="index" :label="item.label" :value="item.value"> </el-option>
         </el-select>
       </el-form-item>

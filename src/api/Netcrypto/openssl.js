@@ -116,7 +116,7 @@ export const urlDecode = params => {
 };
 
 
-// // ================================  签名/验签 ================================//
+// ================================  签名/验签 ================================//
 
 /*
 	裸签名
@@ -142,21 +142,31 @@ export const rawVerify = params => {
 	})
 };
 
-// // ================================  转换工具 ================================//
+// ================================  转换工具 ================================//
 
-// /*
-// 	证书转换
-// */
-// export const convert = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/convert/`, params).then(res => res.data);
-// };
+/*
+	证书转换
+*/
+export const convert = params => {
+	return request({
+		url: '/crypto/convert/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
-// /*
-// 	证书下载
-// */
-// export const downFile = params => {
-// 	return axios.post(`${getBaseUrl()}/crypto/downFile/`, params).then(res => res.data);
-// };
+/*
+	证书下载
+*/
+export const downFile = params => {
+	return request({
+		url: '/crypto/downFile/',
+		method: 'post',
+		urlType: 'Netcrypto',
+		data: params
+	})
+};
 
 // /*
 // 	提取私钥
