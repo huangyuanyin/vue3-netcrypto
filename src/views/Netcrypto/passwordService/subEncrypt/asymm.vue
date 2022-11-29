@@ -73,8 +73,8 @@
 import { onMounted, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
-import { getPlain } from '@/api/Netcrypto/pressure.js'
-import { asymmEncry, asymmDecry } from '@/api/Netcrypto/openssl.js'
+import { getPlain } from '@/api/Netcrypto/pressure'
+import { asymmEncry, asymmDecry } from '@/api/Netcrypto/openssl'
 
 const certfiles = ref([]) // 文件数据列表
 const fileList = ref([]) // 上传文件

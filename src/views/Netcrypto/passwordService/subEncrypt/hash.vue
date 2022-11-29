@@ -42,7 +42,7 @@
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
-import { dataHash } from '@/api/Netcrypto/openssl.js'
+import { dataHash } from '@/api/Netcrypto/openssl'
 
 // 表单
 const hashForm = reactive({

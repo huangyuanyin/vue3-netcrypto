@@ -50,7 +50,7 @@
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
-import { symmEncry, symmDecry } from '@/api/Netcrypto/openssl.js'
+import { symmEncry, symmDecry } from '@/api/Netcrypto/openssl'
 const symmForm = reactive({
   original: '',
   algs: '',

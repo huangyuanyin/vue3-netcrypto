@@ -27,7 +27,7 @@
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
-import { urlEncode, urlDecode } from '@/api/Netcrypto/openssl.js'
+import { urlEncode, urlDecode } from '@/api/Netcrypto/openssl'
 
 const form = reactive({
   plain: ''

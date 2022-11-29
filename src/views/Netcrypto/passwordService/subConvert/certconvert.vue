@@ -231,7 +231,7 @@
 import { onMounted, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
-import { convert, downFile } from '@/api/Netcrypto/openssl.js'
+import { convert, downFile } from '@/api/Netcrypto/openssl'
 
 // const certfile = ref([]) // 转换数据表单
 const fileList = ref([]) // 上传文件

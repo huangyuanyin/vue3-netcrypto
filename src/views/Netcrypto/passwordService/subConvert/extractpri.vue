@@ -2,7 +2,7 @@
   <div>
     <el-form :model="form" :rules="formRules" ref="formRef" size="small" label-width="100px">
       <el-form-item label="证书类型" prop="certype">
-        <el-radio-group v-model="form.certype">
+        <el-radio-group v-model="form.cerType">
           <el-radio label="rsa">RSA证书</el-radio>
           <el-radio label="sm2">国密证书</el-radio>
         </el-radio-group>
@@ -51,8 +51,8 @@
 import { onMounted, reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
-import { getPlain } from '@/api/Netcrypto/pressure.js'
-import { getPriKey } from '@/api/Netcrypto/openssl.js'
+import { getPlain } from '@/api/Netcrypto/pressure'
+import { getPriKey } from '@/api/Netcrypto/openssl'
 
 const certfiles = ref([]) // 文件数据列表
 const fileList = ref([]) // 上传文件

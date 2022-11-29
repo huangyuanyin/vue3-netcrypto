@@ -27,7 +27,7 @@
 import { reactive, ref } from 'vue'
 import type { FormInstance, FormRules } from 'element-plus'
 import { ElMessage } from 'element-plus'
-import { base64Encode, base64Decode } from '@/api/Netcrypto/openssl.js'
+import { base64Encode, base64Decode } from '@/api/Netcrypto/openssl'
 
 // 表单
 const form = reactive({
