@@ -4,10 +4,7 @@ import { ElMessage } from 'element-plus'
 import { getToken } from './auth'
 import baseUrl from '@/config/api'
 const service = axios.create({
-  // baseURL:"http://ceshi13.dishait.cn/"
-  // baseURL:"http://10.20.84.55:8000/",
   // baseURL: "http://10.20.70.89:8082", // 登录
-  // baseDatasURL:"http://10.20.86.27:8015", // POC测试
   timeout: 120000
 })
 
@@ -19,21 +16,21 @@ service.interceptors.request.use(
     const hastoken = getToken()
     if (
       hastoken &&
-      config.url !== "/forum/login/" &&
-      config.url !== "/datas/datas/" &&
-      config.url !== "/WEBt/terminals/" &&
-      config.url !== "/autoapv/device/" &&
-      config.url !== "/autoapv/d_type/" &&
-      config.url !== "/autoapv/d_group/" &&
-      config.url !== "/autoapv/task/" &&
-      config.url !== "/base/build/" &&
-      config.url !== "/base/files/" &&
-      config.url !== "/autoapv/taskrun/" &&
-      config.url !== "/autoapv/case/" &&
-      config.url !== "/autoapv/task_config/" &&
-      config.url !== "/autoapv/report/"
+      config.url !== '/forum/login/' &&
+      config.url !== '/datas/datas/' &&
+      config.url !== '/WEBt/terminals/' &&
+      config.url !== '/autoapv/device/' &&
+      config.url !== '/autoapv/d_type/' &&
+      config.url !== '/autoapv/d_group/' &&
+      config.url !== '/autoapv/task/' &&
+      config.url !== '/base/build/' &&
+      config.url !== '/base/files/' &&
+      config.url !== '/autoapv/taskrun/' &&
+      config.url !== '/autoapv/case/' &&
+      config.url !== '/autoapv/task_config/' &&
+      config.url !== '/autoapv/report/'
     ) {
-      config.headers["Authorization"] = hastoken;
+      config.headers['Authorization'] = hastoken
     }
     switch (config.urlType) {
       case 'POC':
@@ -50,6 +47,10 @@ service.interceptors.request.use(
         break
       case 'Netcrypto':
         config.url = baseUrl.Base_NETCRYPTO_URL + config.url
+        break
+      case 'crypto':
+        config.url = baseUrl.Base_NETCRYPTO_CRYPTO_URL + config.url
+        break
     }
     // 请求拦截进来 显示loading效果
     return config
