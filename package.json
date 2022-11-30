@@ -24,6 +24,7 @@
     "sass": "^1.52.3",
     "sass-loader": "^13.0.0",
     "universal-cookie": "^4.0.4",
+    "unplugin-element-plus": "^0.4.1",
     "vue": "^3.2.25",
     "vue-router": "4",
     "vue3-json-viewer": "^2.2.2",
