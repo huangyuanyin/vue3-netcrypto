@@ -238,3 +238,29 @@ export const getPriKey = params => {
     data: params
   })
 }
+
+// ================================  生成证书 ================================//
+
+/*
+	批量生成证书
+*/
+export const BatchMakeCer = params => {
+  return request({
+    url: '/crypto/x509batch_makecer/',
+    method: 'post',
+    urlType: 'crypto',
+    data: params
+  })
+}
+
+/*
+	P10生成证书
+*/
+export const P10MakeCer = params => {
+  return request({
+    url: '/crypto/p10subgroup_makecert/',
+    method: 'post',
+    urlType: 'crypto',
+    data: params
+  })
+}
