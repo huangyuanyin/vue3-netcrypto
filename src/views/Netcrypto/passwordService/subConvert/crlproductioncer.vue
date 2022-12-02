@@ -40,7 +40,7 @@
           value-format="YYYY-MM-DD"
         />
       </el-form-item>
-      <el-form-item label="证书序列号" prop="certserial">
+      <el-form-item label="证书起始序列号" prop="certserial">
         <el-input v-model="informationCRLForm.certserial" placeholder="" style="width: 250px" />
       </el-form-item>
       <el-form-item label="证书个数" prop="cersercount">
@@ -199,7 +199,7 @@ const generateCer2 = () => {
     formData.append('pfxpass', informationCRLForm.pfxpass)
     formData.append('crldays', String(computer(new Date(informationCRLForm.time).getTime()).day))
     formData.append('crlhours', String(computer(new Date(informationCRLForm.time).getTime()).h))
-    formData.append('crlcer', String(computer(new Date(informationCRLForm.time).getTime()).s))
+    formData.append('crlsec', String(computer(new Date(informationCRLForm.time).getTime()).s))
     formData.append('digetType', informationCRLForm.digetType)
     formData.append('certserial', informationCRLForm.certserial)
     formData.append('cersercount', informationCRLForm.cersercount)
