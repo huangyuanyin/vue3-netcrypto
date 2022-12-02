@@ -264,3 +264,13 @@ export const P10MakeCer = params => {
     data: params
   })
 }
+
+// 生成CRL证书
+export const CrlMakeCer = params => {
+  return request({
+    url: '/crypto/py_makecrl_file/',
+    method: 'post',
+    urlType: 'crypto',
+    data: params
+  })
+}
