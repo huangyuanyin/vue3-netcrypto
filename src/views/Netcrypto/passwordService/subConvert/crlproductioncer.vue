@@ -199,6 +199,7 @@ const generateCer2 = () => {
     formData.append('pfxpass', informationCRLForm.pfxpass)
     formData.append('crldays', String(computer(new Date(informationCRLForm.time).getTime()).day))
     formData.append('crlhours', String(computer(new Date(informationCRLForm.time).getTime()).h))
+    formData.append('crlmin', String(computer(new Date(informationCRLForm.time).getTime()).m))
     formData.append('crlsec', String(computer(new Date(informationCRLForm.time).getTime()).s))
     formData.append('digetType', informationCRLForm.digetType)
     formData.append('certserial', informationCRLForm.certserial)

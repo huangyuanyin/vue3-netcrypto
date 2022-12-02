@@ -55,5 +55,5 @@ export const computer = (date) => {
   let m = parseInt((index - day - h / 24) * 24 * 60)//分
   let s = parseInt((index - day - h / 24 - m / 60 / 24) * 24 * 60 * 60)//秒
   let str = day + "天" + h + "小时" + m + "分" + s + "秒"
-  return { day, h, s }
+  return { day, h, m, s }
 }
