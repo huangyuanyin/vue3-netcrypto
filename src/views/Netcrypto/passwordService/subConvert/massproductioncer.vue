@@ -133,7 +133,7 @@
             <el-form-item
               :label="`扩展项${index + 1}(OID)`"
               :prop="'item[' + index + '].name'"
-              :rules="{ required: true, message: '扩展项不能为空', trigger: 'blur' }"
+              :rules="{ required: false, message: '扩展项不能为空', trigger: 'blur' }"
             >
               <el-input v-model="item.name"></el-input>
             </el-form-item>
@@ -142,7 +142,7 @@
             <el-form-item
               :label="`扩展项值${index + 1}(value)`"
               :prop="'item[' + index + '].variable'"
-              :rules="{ required: true, message: '扩展项值不能为空', trigger: 'blur' }"
+              :rules="{ required: false, message: '扩展项值不能为空', trigger: 'blur' }"
             >
               <el-input v-model="item.variable"></el-input>
             </el-form-item>
