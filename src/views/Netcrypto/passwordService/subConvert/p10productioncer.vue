@@ -117,7 +117,7 @@ const informationCerFormRules = reactive<FormRules>({
   certype: [{ required: true, message: '请选择证书类型', trigger: 'change' }],
   passwd: [{ required: true, message: '请输入证书文件密码', trigger: 'blur' }],
   time: [{ required: true, message: '请选择证书时间', trigger: 'blur' }],
-  subGroup: [{ required: true, message: '请输入使用者DN', trigger: 'blur' }],
+  subGroup: [{ required: false, message: '请输入使用者DN', trigger: 'blur' }],
   digetType: [{ required: true, message: '请选择生成文件类型', trigger: 'change' }]
 })
 

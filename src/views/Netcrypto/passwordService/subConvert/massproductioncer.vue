@@ -232,7 +232,7 @@ const informationCerFormRules = reactive<FormRules>({
   passwd: [{ required: true, message: '请输入证书文件密码', trigger: 'blur' }],
   time: [{ required: true, message: '请选择证书时间', trigger: 'blur' }],
   dntype: [{ required: true, message: '请选择使用者DN类型', trigger: 'blur' }],
-  subjName: [{ required: true, message: '请输入使用者DN', trigger: 'blur' }],
+  subjName: [{ required: false, message: '请输入使用者DN', trigger: 'blur' }],
   outfiletype: [{ required: true, message: '请选择证书格式', trigger: 'change' }],
   digetType: [{ required: true, message: '请选择生成文件类型', trigger: 'change' }],
   keyLen: [{ required: true, message: '请设置密钥长度', trigger: 'blur' }],
