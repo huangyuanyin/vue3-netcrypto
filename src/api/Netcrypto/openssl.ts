@@ -274,3 +274,14 @@ export const CrlMakeCer = params => {
     data: params
   })
 }
+
+// ================================  下载根证 ================================//
+// 下载根证
+export const GencertUpload = params => {
+  return request({
+    url: '/crypto/gencert_py_upload/',
+    method: 'post',
+    urlType: 'crypto',
+    data: params
+  })
+}

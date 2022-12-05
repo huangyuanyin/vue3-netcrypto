@@ -1,77 +1,85 @@
 <template>
   <div class="informationCer">
     <el-form :model="informationCerForm" :rules="informationCerFormRules" ref="informationCerFormRef" label-width="110px" size="small">
-      <el-form-item label="证书类型" prop="certype">
-        <el-radio-group v-model="informationCerForm.certype" style="width: 250px">
-          <el-radio label="RSA">RSA</el-radio>
-          <el-radio label="SM2">SM2</el-radio>
-        </el-radio-group>
-      </el-form-item>
-      <el-form-item label="证书文件">
-        <el-upload
-          ref="upload"
-          class="upload-demo"
-          action="myfile"
-          drag
-          :on-change="handleChange"
-          :limit="1"
-          :on-exceed="handleExceed"
-          accept=".pem,.pfx"
-          :file-list="fileList"
-          :auto-upload="false"
-          style="width: 100vw"
-        >
-          <i class="el-icon-upload"></i>
-          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        </el-upload>
-      </el-form-item>
-      <el-form-item label="P10证书">
-        <el-upload
-          ref="upload"
-          class="upload-demo"
-          action="myfile"
-          drag
-          :on-change="handleChangeP10"
-          :limit="1"
-          :on-exceed="handleExceedP10"
-          accept=".pem,.pfx"
-          :file-list="fileListP10"
-          :auto-upload="false"
-          style="width: 100vw"
-        >
-          <i class="el-icon-upload"></i>
-          <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-        </el-upload>
-      </el-form-item>
-      <el-form-item label="证书文件密码" prop="passwd">
-        <el-input v-model="informationCerForm.passwd" placeholder="请输入证书文件密码" style="width: 250px" />
-      </el-form-item>
-      <el-form-item label="证书时间" prop="time">
-        <el-date-picker
-          v-model="informationCerForm.time"
-          type="datetimerange"
-          start-placeholder="请选择证书开始时间"
-          end-placeholder="请选择证书结束时间"
-          size="small"
-          style="max-width: 300px"
-          :default-time="defaultTime"
-        />
-      </el-form-item>
-      <el-form-item label="证书序列号">
-        <el-input v-model="informationCerForm.serialNumber" placeholder="" style="width: 250px" />
-      </el-form-item>
-      <el-form-item label="使用者DN" prop="subGroup">
-        <el-input v-model="informationCerForm.subGroup" :rows="10" type="textarea" placeholder="请输入使用者DN" style="width: 250px" />
-      </el-form-item>
-      <el-form-item label="签名算法" prop="digetType">
-        <el-select v-model="informationCerForm.digetType" placeholder="请选择生成文件类型" style="width: 250px">
-          <el-option label="sm3" value="sm3" />
-          <el-option label="sha1" value="sha1" />
-          <el-option label="sha256" value="sha256" />
-          <el-option label="sha384" value="sha384" />
-        </el-select>
-      </el-form-item>
-      <el-form-item label="">
+      <el-row :gutter="24">
+        <el-col :span="8">
+          <el-form-item label="证书类型" prop="certype">
+            <el-radio-group v-model="informationCerForm.certype" style="width: 250px" @change="changeCertype">
+              <el-radio label="RSA">RSA</el-radio>
+              <el-radio label="SM2">SM2</el-radio>
+            </el-radio-group>
+          </el-form-item>
+          <el-form-item label="证书文件">
+            <el-upload
+              ref="upload"
+              class="upload-demo"
+              action="myfile"
+              drag
+              :on-change="handleChange"
+              :limit="1"
+              :on-exceed="handleExceed"
+              accept=".pem,.pfx"
+              :file-list="fileList"
+              :auto-upload="false"
+              style="width: 100vw"
+            >
+              <i class="el-icon-upload"></i>
+              <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+            </el-upload>
+          </el-form-item>
+          <el-form-item label="P10证书">
+            <el-upload
+              ref="upload"
+              class="upload-demo"
+              action="myfile"
+              drag
+              :on-change="handleChangeP10"
+              :limit="1"
+              :on-exceed="handleExceedP10"
+              accept=".pem,.pfx"
+              :file-list="fileListP10"
+              :auto-upload="false"
+              style="width: 100vw"
+            >
+              <i class="el-icon-upload"></i>
+              <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+            </el-upload>
+          </el-form-item>
+          <el-form-item label="证书文件密码" prop="passwd">
+            <el-input v-model="informationCerForm.passwd" placeholder="请输入证书文件密码" style="width: 250px" />
+          </el-form-item>
+        </el-col>
+        <el-col :span="8">
+          <el-form-item label="证书时间" prop="time">
+            <el-date-picker
+              v-model="informationCerForm.time"
+              type="datetimerange"
+              start-placeholder="请选择证书开始时间"
+              end-placeholder="请选择证书结束时间"
+              size="small"
+              style="max-width: 300px"
+              :default-time="defaultTime"
+            />
+          </el-form-item>
+          <el-form-item label="证书序列号">
+            <el-input v-model="informationCerForm.serialNumber" placeholder="" style="width: 250px" />
+          </el-form-item>
+          <el-form-item label="使用者DN" prop="subGroup">
+            <el-input v-model="informationCerForm.subGroup" :rows="10" type="textarea" placeholder="请输入使用者DN" style="width: 250px" />
+          </el-form-item>
+          <el-form-item label="签名算法" prop="digetType">
+            <el-select v-model="informationCerForm.digetType" placeholder="请选择生成文件类型" style="width: 250px">
+              <el-option
+                v-for="(item, index) in digetTypeList"
+                :key="'digetTypeList' + index"
+                :label="item.label"
+                :value="item.value"
+              ></el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-form-item label="" style="margin-left: 20%">
         <el-button size="small" type="primary" @click="generateCer()">生成证书</el-button>
       </el-form-item>
     </el-form>
@@ -95,6 +103,7 @@ const filesP10 = ref([])
 const fileListP10 = ref([])
 const defaultTime: [Date, Date] = [new Date(2000, 1, 1, 12, 0, 0), new Date(2000, 2, 1, 8, 0, 0)] // '12:00:00', '08:00:00'
 const resultUrl = ref('')
+const digetTypeList = ref([])
 const informationCerForm = reactive({
   certype: '',
   passwd: '',
@@ -126,6 +135,18 @@ const handleChange = (file, fileList) => {
 
 const handleChangeP10 = (file, fileList) => {
   filesP10.value.push(file.raw)
+}
+
+const changeCertype = it => {
+  if (it == 'SM2') {
+    digetTypeList.value = [{ label: 'sm3', value: 'sm3' }]
+  } else {
+    digetTypeList.value = [
+      { label: 'sha1', value: 'sha1' },
+      { label: 'sha256', value: 'sha256' },
+      { label: 'sha384', value: 'sha384' }
+    ]
+  }
 }
 
 const toDownFile = () => {
