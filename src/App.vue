@@ -1,4 +1,4 @@
-<script setup>
+<script lang="ts" setup>
 import * as echarts from 'echarts'
 import { provide } from 'vue'
 import { ElConfigProvider } from 'element-plus'

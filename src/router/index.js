@@ -47,13 +47,31 @@ const routes = [
             component: () => import('@/views/Netcrypto/overview/index.vue')
           },
           {
-            path: '/passwordService',
-            name: 'PasswordService',
+            path: '/encrypt',
+            name: 'Encrypt',
             meta: {
-              title: '密码服务',
+              title: '加解密',
               keepAlive: true
             },
-            component: () => import('@/views/Netcrypto/passwordService/index.vue')
+            component: () => import('@/views/Netcrypto/encrypt/index.vue')
+          },
+          {
+            path: '/signverify',
+            name: 'Signverify',
+            meta: {
+              title: '签名/验签',
+              keepAlive: true
+            },
+            component: () => import('@/views/Netcrypto/signverify/index.vue')
+          },
+          {
+            path: '/certtool',
+            name: 'Certtool',
+            meta: {
+              title: '证书工具',
+              keepAlive: true
+            },
+            component: () => import('@/views/Netcrypto/certtool/index.vue')
           }
         ]
       },

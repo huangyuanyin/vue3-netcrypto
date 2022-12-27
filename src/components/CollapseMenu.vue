@@ -42,13 +42,13 @@
 
 <script lang="ts">
 import { defineComponent, onMounted, ref } from 'vue'
-import { Document, Menu as IconMenu, Location, School, DataLine, House } from '@element-plus/icons-vue'
+import { Document, Menu as IconMenu, Location, School, DataLine, House, Suitcase, Money } from '@element-plus/icons-vue'
 import { useAppStore } from '../store/modules/app/index'
 export default defineComponent({
-  components: { Document, IconMenu, Location, School, House, DataLine },
+  components: { Document, IconMenu, Location, School, House, DataLine, Suitcase, Money },
   props: {
     menuList: {
-      type: Array,
+      type: Array as any,
       default: () => []
     }
   },

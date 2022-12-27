@@ -1,6 +1,6 @@
 export const cheshiMenuData = [
   {
-    id: '01',
+    id: 'test01',
     title: '测试',
     path: null,
     isDisabled: true,
@@ -8,20 +8,20 @@ export const cheshiMenuData = [
     children: []
   },
   {
-    id: '02',
+    id: 'test02',
     title: '概览',
     path: '/test/overview',
     isDisabled: false,
     children: []
   },
   {
-    id: '03',
+    id: 'test03',
     title: '测试管理',
     path: null,
     isDisabled: false,
     children: [
       {
-        id: '0301',
+        id: 'test0301',
         title: '测试一',
         path: '/ceshiOne',
         isDisabled: false,
@@ -48,10 +48,26 @@ export const APVAutoMenuData = [
     children: []
   },
   {
-    id: '0301',
-    title: '密码服务',
-    path: '/passwordService',
+    id: '03',
+    title: '加解密',
+    path: '/encrypt',
     icon: 'School',
+    isDisabled: false,
+    children: []
+  },
+  {
+    id: '04',
+    title: '签名/验签',
+    path: '/signverify',
+    icon: 'Suitcase',
+    isDisabled: false,
+    children: []
+  },
+  {
+    id: '05',
+    title: '证书工具',
+    path: '/certtool',
+    icon: 'Money',
     isDisabled: false,
     children: []
   }
