@@ -57,7 +57,7 @@
               start-placeholder="请选择证书开始时间"
               end-placeholder="请选择证书结束时间"
               size="large"
-              style="max-width: 300px"
+              style="max-width: 350px"
               :default-time="defaultTime"
             />
           </el-form-item>
@@ -65,7 +65,7 @@
             <el-input v-model="informationCerForm.serialNumber" placeholder="" style="width: 250px" />
           </el-form-item>
           <el-form-item label="使用者DN" prop="subGroup">
-            <el-input v-model="informationCerForm.subGroup" :rows="10" type="textarea" placeholder="请输入使用者DN" style="width: 250px" />
+            <el-input v-model="informationCerForm.subGroup" :rows="3" type="textarea" placeholder="请输入使用者DN" style="width: 400px" />
           </el-form-item>
           <el-form-item label="签名算法" prop="digetType">
             <el-select v-model="informationCerForm.digetType" placeholder="请选择生成文件类型" style="width: 250px">

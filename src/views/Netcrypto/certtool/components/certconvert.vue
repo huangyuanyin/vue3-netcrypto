@@ -41,10 +41,10 @@
         <span v-if="convertForm.certfile == 'paste'">
           <el-form-item>
             <el-input
-              style="width: 60%; margin-left: 50px"
+              style="width: 400px; margin-left: 50px"
               v-model="convertForm.certpaste"
               type="textarea"
-              :autosize="{ minRows: 10, maxRows: 10 }"
+              :autosize="{ minRows: 8, maxRows: 10 }"
               placeholder="证书内容"
             >
             </el-input>
