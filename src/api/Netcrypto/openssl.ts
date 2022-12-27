@@ -218,12 +218,11 @@ export const convert = params => {
 /*
 	证书下载
 */
-export const downFile = params => {
+export const downFile = () => {
   return request({
     url: '/crypto/downFile/',
     method: 'post',
     urlType: 'Netcrypto',
-    data: params
   })
 }
 
