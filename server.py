@@ -6,7 +6,7 @@ import threading
 import time
 
 # 配置服务器信息
-HOSTS = "10.20.86.27"
+HOSTS = "10.4.84.27"
 PORT = 22
 USERNAME = "root"
 PASSWORD = "inf0sec312!"
