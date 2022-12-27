@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form :model="symmForm" :rules="symmFormRules" ref="symmFormRef" label-width="130px" size="small">
+    <el-form :model="symmForm" :rules="symmFormRules" ref="symmFormRef" label-width="130px" size="large">
       <el-form-item label="待加密/解密数据" prop="original">
         <el-input
           style="width: 95%"

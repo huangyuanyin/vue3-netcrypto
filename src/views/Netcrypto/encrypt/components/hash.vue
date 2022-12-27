@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form :model="hashForm" :rules="hashFormRules" ref="hashFormRef" label-width="70px" size="small">
+    <el-form :model="hashForm" :rules="hashFormRules" ref="hashFormRef" label-width="70px" size="large">
       <el-form-item prop="plain">
         <el-input
           style="width: 95%"
