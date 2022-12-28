@@ -2,7 +2,7 @@
   <div class="rootKey">
     <h5>根密钥</h5>
     <el-card shadow="never">
-      <el-form :model="rootKeyForm" :rules="rootKeyFormRules" ref="rootKeyFormRef" label-width="130px" size="default" :inline="true">
+      <!-- <el-form :model="rootKeyForm" :rules="rootKeyFormRules" ref="rootKeyFormRef" label-width="130px" size="default" :inline="true">
         <el-form-item label="自定义根密钥" prop="certfile">
           <el-upload
             ref="upload"
@@ -24,7 +24,7 @@
           <el-button size="default" type="primary" @click="UploadRootKey">提交</el-button>
           <el-button size="default">选回默认证书</el-button>
         </el-form-item>
-      </el-form>
+      </el-form> -->
       <el-form
         :model="rootKeyDNForm"
         :rules="rootKeyDNFormRules"
@@ -34,11 +34,30 @@
         size="default"
       >
         <el-form-item label="根证书DN" prop="rootKeyDN">
-          <el-input v-model="rootKeyDNForm.rootKeyDN" :rows="5" type="textarea" placeholder="" style="width: 300px" />
-          <el-button type="primary" style="margin-left: 20px">下载根证</el-button>
+          <el-input
+            v-model="rootKeyDNForm.rootKeyDN"
+            placeholder="（假数据）C=cn,O=INFOSEC Technologies SHA256ID,CN=appSHA256ID"
+            style="width: 30vw"
+            disabled
+          />
+          <el-button type="danger" style="margin-left: 20px">下载根证</el-button>
+          <el-upload
+            ref="upload"
+            class="uploadDN"
+            action="myfile"
+            :on-change="handleRootKeyChange"
+            :limit="1"
+            :on-exceed="handleRootKeyExceed"
+            accept=".pem,.pfx"
+            :file-list="fileRootKeyList"
+            :auto-upload="false"
+          >
+            <el-button type="primary" style="margin-left: 20px">自定义根证</el-button>
+          </el-upload>
+          <el-button size="default" style="margin-left: 20px">选回默认证书</el-button>
         </el-form-item>
         <el-form-item label="说明：" class="illustrate">
-          <span class="illustrate">可以上传根证书和跟密钥，如果不设置采用默认密钥进行签名</span>
+          <span class="illustrate">可以自定义根证书DN，如果不自定义则采用默认根证书DN</span>
         </el-form-item>
       </el-form>
     </el-card>
@@ -58,7 +77,7 @@
     <el-card shadow="never">
       <el-form :model="informationCerForm" :rules="informationCerFormRules" ref="informationCerFormRef" label-width="130px" size="large">
         <el-row :gutter="24">
-          <el-col :span="8">
+          <el-col :span="10">
             <el-form-item label="证书类型" prop="certype">
               <el-radio-group v-model="informationCerForm.certype" style="width: 250px" @change="changeCertype">
                 <el-radio label="RSA">RSA</el-radio>
@@ -83,8 +102,11 @@
                 <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
               </el-upload>
             </el-form-item> -->
-            <el-form-item label="证书文件密码" prop="passwd">
+            <!-- <el-form-item label="证书文件密码" prop="passwd">
               <el-input v-model="informationCerForm.passwd" placeholder="请输入证书文件密码" style="width: 250px" />
+            </el-form-item> -->
+            <el-form-item label="证书密钥口令" prop="outfilepassw">
+              <el-input v-model="informationCerForm.outfilepassw" placeholder="请设置生成证书密钥口令" style="width: 250px" />
             </el-form-item>
             <el-form-item label="证书时间" prop="time">
               <el-date-picker
@@ -93,7 +115,7 @@
                 start-placeholder="请选择证书开始时间"
                 end-placeholder="请选择证书结束时间"
                 size="large"
-                style="max-width: 350px"
+                style="max-width: 400px"
                 :default-time="defaultTime"
                 :shortcuts="shortcuts"
               />
@@ -118,24 +140,78 @@
               </el-select>
             </el-form-item>
             <el-form-item label="添加扩展">
-              <el-radio-group v-model="addExtstrlist" style="width: 250px" :disabled="informationCerForm.dntype == 'string' ? true : false">
+              <el-radio-group v-model="addExtstrlist" style="width: 250px" :disabled="informationCerForm.dntype ? true : false">
                 <el-radio label="0">否</el-radio>
                 <el-radio label="1">是</el-radio>
               </el-radio-group>
             </el-form-item>
           </el-col>
           <el-col :span="12">
-            <el-form-item label="使用者DN类型" prop="dntype">
-              <el-select v-model="informationCerForm.dntype" placeholder="请选择使用者DN类型" style="width: 250px" @change="changeDNType">
+            <el-form-item label="使用者DN" prop="dntype">
+              <el-checkbox v-model="informationCerForm.dntype" label="自定义编码格式" size="large" />
+              <!-- <el-select v-model="informationCerForm.dntype" placeholder="请选择使用者DN类型" style="width: 250px" @change="changeDNType">
                 <el-option label="数组类型" value="group" />
                 <el-option label="字符串类型" value="string" />
-              </el-select>
+              </el-select> -->
+              <el-input v-if="!informationCerForm.dntype" v-model="informationCerForm.subjName" placeholder="" style="width: 30vw" />
+              <el-form
+                v-else
+                :model="informationCerForm.subjName"
+                ref="subjNameFormRef"
+                label-width="80px"
+                size="large"
+                class="subjNameForm"
+                :rules="subjNameFormRules"
+              >
+                <el-row :gutter="24">
+                  <el-col :span="12">
+                    <el-form-item label="C：" prop="C">
+                      <el-input v-model="informationCerForm.subjName[name]" style="width: 250px"></el-input>
+                    </el-form-item>
+                  </el-col>
+                  <el-col :span="12">
+                    <el-form-item label="编码格式" prop="encodingFormat">
+                      <el-select v-model="informationCerForm.outfiletype" placeholder="请选择编码格式" style="width: 250px">
+                        <el-option label="UTF-8" value="UTF-8" />
+                      </el-select>
+                    </el-form-item>
+                  </el-col>
+                </el-row>
+                <el-row :gutter="24" style="margin-top: 10px; margin-bottom: 10px">
+                  <el-col :span="12">
+                    <el-form-item label="O：" prop="O">
+                      <el-input v-model="informationCerForm.subjName[name]" style="width: 250px"></el-input>
+                    </el-form-item>
+                  </el-col>
+                  <el-col :span="12">
+                    <el-form-item label="编码格式" prop="encodingFormat">
+                      <el-select v-model="informationCerForm.outfiletype" placeholder="请选择编码格式" style="width: 250px">
+                        <el-option label="UTF-8" value="UTF-8" />
+                      </el-select>
+                    </el-form-item>
+                  </el-col>
+                </el-row>
+                <el-row :gutter="24">
+                  <el-col :span="12">
+                    <el-form-item label="CN：" prop="CN">
+                      <el-input v-model="informationCerForm.subjName[name]" style="width: 250px"></el-input>
+                    </el-form-item>
+                  </el-col>
+                  <el-col :span="12">
+                    <el-form-item label="编码格式" prop="encodingFormat">
+                      <el-select v-model="informationCerForm.outfiletype" placeholder="请选择编码格式" style="width: 250px">
+                        <el-option label="UTF-8" value="UTF-8" />
+                      </el-select>
+                    </el-form-item>
+                  </el-col>
+                </el-row>
+              </el-form>
             </el-form-item>
-            <el-form-item label="使用者DN" prop="subjName">
+            <!-- <el-form-item label="使用者DN" prop="subjName">
               <el-input v-model="informationCerForm.subjName" :rows="3" type="textarea" placeholder="请输入使用者DN" style="width: 350px" />
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="签名算法" prop="digetType">
-              <el-select v-model="informationCerForm.digetType" placeholder="请选择生成文件类型" style="width: 250px">
+              <el-select v-model="informationCerForm.digetType" placeholder="请选择签名算法" style="width: 250px">
                 <el-option
                   v-for="(item, index) in digetTypeList"
                   :key="'digetTypeList' + index"
@@ -143,9 +219,6 @@
                   :value="item.value"
                 ></el-option>
               </el-select>
-            </el-form-item>
-            <el-form-item label="证书密钥口令" prop="outfilepassw">
-              <el-input v-model="informationCerForm.outfilepassw" placeholder="请设置生成证书密钥口令" style="width: 250px" />
             </el-form-item>
             <el-form-item label="是否产生crl文件" prop="produceCrlFile">
               <el-select v-model="informationCerForm.produceCrlFile" placeholder="" style="width: 250px">
@@ -190,7 +263,7 @@
             </el-form> -->
           </el-col>
         </el-row>
-        <el-form-item label="" style="margin-left: 20%" v-if="addExtstrlist === '0'">
+        <el-form-item label="" style="margin-left: 25%" v-if="addExtstrlist === '0'">
           <el-button size="large" type="primary" @click="generateCer()">生成证书</el-button>
         </el-form-item>
       </el-form>
@@ -233,7 +306,7 @@
             <el-button @click="removeExtstrlistFormForm(item)" :icon="Delete" size="large" circle> </el-button>
           </el-col>
         </el-row>
-        <el-form-item label="" style="margin-left: 20%">
+        <el-form-item label="" style="margin-left: 25%">
           <el-button size="large" type="primary" @click="generateCer()">生成证书</el-button>
         </el-form-item>
       </el-form>
@@ -294,7 +367,7 @@ const keyLenOptions = ref([
   { label: 'rsa:1024', value: '1024' },
   { label: 'rsa:2048', value: '2048' },
   { label: 'rsa:4096', value: '4096' },
-  { label: 'sm3:256', value: '256' }
+  { label: 'sm2:256', value: '256' }
 ])
 const rootKeyDN = ref('')
 const rootKeyForm = reactive({
@@ -316,7 +389,7 @@ const informationCerForm = reactive({
   certype: '',
   passwd: '',
   time: '',
-  dntype: '',
+  dntype: false,
   subjName: '',
   outfiletype: '',
   digetType: '',
@@ -334,13 +407,19 @@ const informationCerFormRules = reactive<FormRules>({
   dntype: [{ required: true, message: '请选择使用者DN类型', trigger: 'blur' }],
   subjName: [{ required: false, message: '请输入使用者DN', trigger: 'blur' }],
   outfiletype: [{ required: true, message: '请选择证书格式', trigger: 'change' }],
-  digetType: [{ required: true, message: '请选择生成文件类型', trigger: 'change' }],
+  digetType: [{ required: true, message: '请选择签名算法', trigger: 'change' }],
   keyLen: [{ required: true, message: '请选择证书密钥长度', trigger: 'blur' }],
   outfilepassw: [{ required: true, message: '请设置生成证书密钥口令', trigger: 'blur' }],
   produceCrlFile: [{ required: true, message: '请选择是否生成CRL文件', trigger: 'blur' }],
   serialNumber: [{ required: true, message: '请选择序列号长度', trigger: 'blur' }]
 })
 const extstrlistFormRef = ref<FormInstance>()
+const subjNameFormRef = ref<FormInstance>()
+const subjNameFormRules = reactive<FormRules>({
+  C: [{ required: true, message: '请输入根证书DN', trigger: 'blur' }],
+  O: [{ required: true, message: '请输入根证书DN', trigger: 'blur' }],
+  CN: [{ required: true, message: '请输入根证书DN', trigger: 'blur' }]
+})
 const rootKeyDNForm = reactive({
   rootKeyDN: ''
 })
@@ -441,7 +520,7 @@ const generateCer2 = () => {
     formData.append('filenum', numberCerForm.filenum)
     formData.append('certype', informationCerForm.certype)
     formData.append('passwd', informationCerForm.passwd)
-    formData.append('dntype', informationCerForm.dntype)
+    formData.append('dntype', informationCerForm.dntype ? 'true' : 'false')
     formData.append('subjName', informationCerForm.subjName)
     formData.append('startTime', String(new Date(informationCerForm.time[0]).getTime() / 1000))
     formData.append('endTime', String(new Date(informationCerForm.time[1]).getTime() / 1000))
@@ -495,6 +574,9 @@ const UploadRootKey = () => {
 .rootKey {
   .illustrate {
     font-weight: 600;
+  }
+  .uploadDN {
+    display: flex;
   }
 }
 .upload-demo {
