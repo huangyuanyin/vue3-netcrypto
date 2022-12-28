@@ -8,7 +8,7 @@
           <el-radio label="DER">DER</el-radio>
         </el-radio-group>
       </el-form-item>
-      <el-form-item label="目标格式" prop="Targetformat">
+      <el-form-item label="目标格式" prop="Targetformat" @change="changeTargetformat">
         <el-radio-group v-model="convertForm.Targetformat">
           <span v-if="convertForm.Sourceformat == 'PEM'">
             <el-radio label="DER">DER</el-radio>
@@ -38,19 +38,7 @@
         <el-select v-model="convertForm.certfile" placeholder="请选择" style="width: 80px" v-else>
           <el-option v-for="item in option" :key="item.value" :label="item.label" :value="item.value"> </el-option>
         </el-select>
-        <span v-if="convertForm.certfile == 'paste'">
-          <el-form-item>
-            <el-input
-              style="width: 400px; margin-left: 50px"
-              v-model="convertForm.certpaste"
-              type="textarea"
-              :autosize="{ minRows: 8, maxRows: 10 }"
-              placeholder="证书内容"
-            >
-            </el-input>
-          </el-form-item>
-        </span>
-        <span v-else>
+        <span v-if="convertForm.certfile === 'upload'">
           <el-upload
             class="upload-demo"
             action="myfile"
@@ -66,6 +54,16 @@
             <el-button size="large" type="primary">选择文件</el-button>
           </el-upload>
         </span>
+      </el-form-item>
+      <el-form-item label="" v-if="convertForm.certfile === 'paste'">
+        <el-input
+          style="width: 60vw; margin-left: 0px"
+          v-model="convertForm.certpaste"
+          type="textarea"
+          :autosize="{ minRows: 10, maxRows: 10 }"
+          placeholder="证书内容"
+        >
+        </el-input>
       </el-form-item>
 
       <el-form-item label="证书链文件1:" prop="certchainone" v-if="convertForm.Targetformat == 'P7B'">
@@ -291,11 +289,15 @@ onMounted(() => {
 })
 
 const changeHandler = value => {
+  convertForm.certfile = 'upload'
   if (value != 'PEM') {
     convertForm.Targetformat = 'PEM'
   } else {
     convertForm.Targetformat = 'DER'
   }
+}
+const changeTargetformat = value => {
+  convertForm.certfile = 'upload'
 }
 // 转换
 const converttolHandle = async () => {
