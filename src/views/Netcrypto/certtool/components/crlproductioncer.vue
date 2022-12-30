@@ -13,95 +13,144 @@
     <h5>证书信息设置</h5>
     <el-card shadow="never">
       <el-form :model="informationCRLForm" :rules="informationCRLFormRules" ref="informationCRLFormRef" label-width="130px" size="large">
-        <el-form-item label="证书文件">
-          <el-upload
-            ref="upload"
-            class="upload-demo"
-            action="myfile"
-            drag
-            :on-change="handleChange"
-            :limit="1"
-            :on-exceed="handleExceed"
-            accept=".pem,.pfx"
-            :file-list="fileList"
-            :auto-upload="false"
-            style="width: 100vw"
-          >
-            <i class="el-icon-upload"></i>
-            <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-          </el-upload>
-        </el-form-item>
-        <el-form-item label="证书文件密码" prop="pfxpass">
-          <el-input v-model="informationCRLForm.pfxpass" placeholder="请输入证书文件密码" style="width: 250px" />
-        </el-form-item>
-        <el-form-item label="有效期（秒）" prop="time">
-          <el-date-picker
-            v-model="informationCRLForm.time"
-            type="date"
-            placeholder="请选择有效期（至）"
-            format="YYYY/MM/DD"
-            value-format="YYYY-MM-DD"
-          />
-        </el-form-item>
-        <el-form-item label="证书起始序列号" prop="certserial">
-          <el-input v-model="informationCRLForm.certserial" placeholder="" style="width: 250px" />
-        </el-form-item>
-        <el-form-item label="证书个数" prop="cersercount">
-          <el-input v-model="informationCRLForm.cersercount" placeholder="请输入证书个数" style="width: 250px" />
-        </el-form-item>
-        <el-form-item label="CRL文件序号" prop="crlnumberfile">
-          <el-input v-model="informationCRLForm.crlnumberfile" placeholder="" style="width: 250px" />
-        </el-form-item>
-        <el-form-item label="签名算法" prop="digetType">
-          <el-select v-model="informationCRLForm.digetType" placeholder="请选择签名算法" style="width: 250px">
-            <el-option label="sm3" value="sm3" />
-            <el-option label="sha1" value="sha1" />
-            <el-option label="sha256" value="sha256" />
-            <el-option label="sha384" value="sha384" />
-          </el-select>
-        </el-form-item>
-        <el-form-item label="添加扩展">
-          <el-radio-group v-model="addExtstrlist" style="width: 250px">
-            <el-radio label="0">否</el-radio>
-            <el-radio label="1">是</el-radio>
-          </el-radio-group>
-        </el-form-item>
-        <el-form
-          :model="informationCRLForm.extstrlist"
-          ref="extstrlistFormRef"
-          v-if="addExtstrlist == '1'"
-          label-width="130px"
-          size="large"
-        >
-          <el-row :gutter="24" v-for="(item, index) in informationCRLForm.extstrlist" :key="'extstrlist' + index">
-            <el-col :span="6">
-              <el-form-item
-                :label="`扩展项${index + 1}(OID)`"
-                :prop="'item[' + index + '].name'"
-                :rules="{ required: false, message: '扩展项不能为空', trigger: 'blur' }"
+        <el-row :gutter="24">
+          <el-col :span="8">
+            <el-form-item label="证书文件">
+              <el-upload
+                ref="upload"
+                class="upload-demo"
+                action="myfile"
+                drag
+                :on-change="handleChange"
+                :limit="1"
+                :on-exceed="handleExceed"
+                accept=".pem,.pfx"
+                :file-list="fileList"
+                :auto-upload="false"
+                style="width: 100vw"
               >
-                <el-input v-model="item.name"></el-input>
-              </el-form-item>
-            </el-col>
-            <el-col :span="6">
-              <el-form-item
-                :label="`扩展项值${index + 1}(value)`"
-                :prop="'item[' + index + '].variable'"
-                :rules="{ required: false, message: '扩展项值不能为空', trigger: 'blur' }"
-              >
-                <el-input v-model="item.variable"></el-input>
-              </el-form-item>
-            </el-col>
-            <el-col :span="1">
-              <el-button @click="addExtstrlistForm" size="large" :icon="CirclePlus" circle></el-button>
-            </el-col>
-            <el-col :span="3" v-if="informationCRLForm.extstrlist.length !== 1">
-              <el-button @click="removeExtstrlistFormForm(item)" :icon="Delete" size="large" circle> </el-button>
-            </el-col>
-          </el-row>
-        </el-form>
-        <el-form-item label="">
+                <i class="el-icon-upload"></i>
+                <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+              </el-upload>
+            </el-form-item>
+            <el-form-item label="证书密钥口令" prop="pfxpass">
+              <el-input v-model="informationCRLForm.pfxpass" placeholder="请输入证书密钥口令" style="width: 250px" />
+            </el-form-item>
+            <el-form-item label="证书个数" prop="cersercount">
+              <el-input v-model="informationCRLForm.cersercount" placeholder="请输入证书个数" style="width: 250px" />
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item label="有效期（秒）" prop="time">
+              <el-date-picker
+                v-model="informationCRLForm.time"
+                type="date"
+                placeholder="请选择有效期（至）"
+                format="YYYY/MM/DD"
+                value-format="YYYY-MM-DD"
+              />
+            </el-form-item>
+            <el-form-item label="证书起始序列号" prop="certserial">
+              <el-input v-model="informationCRLForm.certserial" placeholder="" style="width: 250px" />
+            </el-form-item>
+            <el-form-item label="CRL文件序号" prop="crlnumberfile">
+              <el-input v-model="informationCRLForm.crlnumberfile" placeholder="" style="width: 250px" />
+            </el-form-item>
+            <el-form-item label="签名算法" prop="digetType">
+              <el-select v-model="informationCRLForm.digetType" placeholder="请选择签名算法" style="width: 250px">
+                <el-option label="sm3" value="sm3" />
+                <el-option label="sha1" value="sha1" />
+                <el-option label="sha256" value="sha256" />
+                <el-option label="sha384" value="sha384" />
+              </el-select>
+            </el-form-item>
+            <el-form-item label="添加扩展">
+              <el-radio-group v-model="addExtstrlist" style="width: 250px">
+                <el-radio label="0">否</el-radio>
+                <el-radio label="1">是</el-radio>
+              </el-radio-group>
+            </el-form-item>
+            <!-- <el-form
+              :model="informationCRLForm.extstrlist"
+              ref="extstrlistFormRef"
+              v-if="addExtstrlist == '1'"
+              label-width="130px"
+              size="large"
+            >
+              <el-row :gutter="24" v-for="(item, index) in informationCRLForm.extstrlist" :key="'extstrlist' + index">
+                <el-col :span="6">
+                  <el-form-item
+                    :label="`扩展项${index + 1}(OID)`"
+                    :prop="'item[' + index + '].name'"
+                    :rules="{ required: false, message: '扩展项不能为空', trigger: 'blur' }"
+                  >
+                    <el-input v-model="item.name"></el-input>
+                  </el-form-item>
+                </el-col>
+                <el-col :span="6">
+                  <el-form-item
+                    :label="`扩展项值${index + 1}(value)`"
+                    :prop="'item[' + index + '].variable'"
+                    :rules="{ required: false, message: '扩展项值不能为空', trigger: 'blur' }"
+                  >
+                    <el-input v-model="item.variable"></el-input>
+                  </el-form-item>
+                </el-col>
+                <el-col :span="1">
+                  <el-button @click="addExtstrlistForm" size="large" :icon="CirclePlus" circle></el-button>
+                </el-col>
+                <el-col :span="3" v-if="informationCRLForm.extstrlist.length !== 1">
+                  <el-button @click="removeExtstrlistFormForm(item)" :icon="Delete" size="large" circle> </el-button>
+                </el-col>
+              </el-row>
+            </el-form> -->
+          </el-col>
+        </el-row>
+        <el-form-item label="" style="margin-left: 20%" v-if="addExtstrlist === '0'">
           <el-button size="large" type="primary" @click="generateCer()">生成CRL</el-button>
+        </el-form-item>
+      </el-form>
+    </el-card>
+  </div>
+  <div class="extstrlist" v-if="addExtstrlist === '1'">
+    <h5>扩展项</h5>
+    <el-card shadow="never">
+      <el-form
+        :model="informationCRLForm.extstrlist"
+        ref="extstrlistFormRef"
+        v-if="addExtstrlist == '1'"
+        label-width="130px"
+        size="large"
+        class="extstrlistForm"
+      >
+        <el-row :gutter="24" v-for="(item, index) in informationCRLForm.extstrlist" :key="'extstrlist' + index">
+          <el-col :span="8">
+            <el-form-item
+              :label="`扩展项${index + 1}(OID)`"
+              :prop="'item[' + index + '].name'"
+              :rules="{ required: false, message: '扩展项不能为空', trigger: 'blur' }"
+            >
+              <el-input v-model="item.name"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="8">
+            <el-form-item
+              :label="`扩展项值${index + 1}(value)`"
+              :prop="'item[' + index + '].variable'"
+              :rules="{ required: false, message: '扩展项值不能为空', trigger: 'blur' }"
+            >
+              <el-input v-model="item.variable"></el-input>
+            </el-form-item>
+          </el-col>
+          <el-col :span="1">
+            <el-button @click="addExtstrlistForm" size="large" :icon="CirclePlus" circle></el-button>
+          </el-col>
+          <el-col :span="3" v-if="informationCRLForm.extstrlist.length !== 1">
+            <el-button @click="removeExtstrlistFormForm(item)" :icon="Delete" size="large" circle> </el-button>
+          </el-col>
+        </el-row>
+        <el-form-item label="" style="margin-left: 25%">
+          <el-button size="large" type="primary" @click="generateCer()">生成证书</el-button>
         </el-form-item>
       </el-form>
     </el-card>
@@ -144,7 +193,7 @@ const informationCRLForm = reactive({
 })
 const informationCRLFormRef = ref<FormInstance>()
 const informationCRLFormRules = reactive<FormRules>({
-  pfxpass: [{ required: true, message: '请输入证书文件密码', trigger: 'blur' }],
+  pfxpass: [{ required: true, message: '请输入证书密钥口令', trigger: 'blur' }],
   time: [{ required: true, message: '请选择有效期（至）', trigger: 'blur' }],
   certserial: [{ required: true, message: '请输入证书序列号', trigger: 'blur' }],
   cersercount: [{ required: true, message: '请输入证书个数', trigger: 'blur' }],
