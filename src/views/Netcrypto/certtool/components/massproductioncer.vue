@@ -40,7 +40,7 @@
             style="width: 30vw"
             disabled
           />
-          <el-button type="danger" style="margin-left: 20px">下载根证</el-button>
+          <el-button type="primary" style="margin-left: 20px">下载根证</el-button>
           <el-upload
             ref="upload"
             class="uploadDN"
@@ -57,7 +57,7 @@
           <el-button size="default" style="margin-left: 20px">选回默认证书</el-button>
         </el-form-item>
         <el-form-item label="说明：" class="illustrate">
-          <span class="illustrate">可以自定义根证书DN，如果不自定义则采用默认根证书DN</span>
+          <span class="illustrate">可根据需要自定义根证书，否则将使用默认根证签名，请知晓！</span>
         </el-form-item>
       </el-form>
     </el-card>
@@ -105,21 +105,6 @@
             <!-- <el-form-item label="证书文件密码" prop="passwd">
               <el-input v-model="informationCerForm.passwd" placeholder="请输入证书文件密码" style="width: 250px" />
             </el-form-item> -->
-            <el-form-item label="证书密钥口令" prop="outfilepassw">
-              <el-input v-model="informationCerForm.outfilepassw" placeholder="请设置生成证书密钥口令" style="width: 250px" />
-            </el-form-item>
-            <el-form-item label="证书时间" prop="time">
-              <el-date-picker
-                v-model="informationCerForm.time"
-                type="datetimerange"
-                start-placeholder="请选择证书开始时间"
-                end-placeholder="请选择证书结束时间"
-                size="large"
-                style="max-width: 400px"
-                :default-time="defaultTime"
-                :shortcuts="shortcuts"
-              />
-            </el-form-item>
             <el-form-item label="生成文件类型" prop="outfiletype">
               <el-select v-model="informationCerForm.outfiletype" placeholder="请选择生成文件类型" style="width: 250px">
                 <el-option label="pfx" value="pfx" />
@@ -147,6 +132,31 @@
             </el-form-item>
           </el-col>
           <el-col :span="12">
+            <el-form-item label="证书时间" prop="time">
+              <el-date-picker
+                v-model="informationCerForm.time"
+                type="datetimerange"
+                start-placeholder="请选择证书开始时间"
+                end-placeholder="请选择证书结束时间"
+                size="large"
+                style="max-width: 400px"
+                :default-time="defaultTime"
+                :shortcuts="shortcuts"
+              />
+            </el-form-item>
+            <el-form-item label="证书密钥口令" prop="outfilepassw">
+              <el-input v-model="informationCerForm.outfilepassw" placeholder="请设置生成证书密钥口令" style="width: 250px" />
+            </el-form-item>
+            <el-form-item label="签名算法" prop="digetType">
+              <el-select v-model="informationCerForm.digetType" placeholder="请选择签名算法" style="width: 250px">
+                <el-option
+                  v-for="(item, index) in digetTypeList"
+                  :key="'digetTypeList' + index"
+                  :label="item.label"
+                  :value="item.value"
+                ></el-option>
+              </el-select>
+            </el-form-item>
             <el-form-item label="使用者DN" prop="dntype">
               <el-checkbox v-model="informationCerForm.dntype" label="自定义编码格式" size="large" />
               <!-- <el-select v-model="informationCerForm.dntype" placeholder="请选择使用者DN类型" style="width: 250px" @change="changeDNType">
@@ -177,7 +187,7 @@
                     </el-form-item>
                   </el-col>
                 </el-row>
-                <el-row :gutter="24" style="margin-top: 10px; margin-bottom: 10px">
+                <el-row :gutter="24" style="margin-top: 20px; margin-bottom: 20px">
                   <el-col :span="12">
                     <el-form-item label="O：" prop="O">
                       <el-input v-model="informationCerForm.subjName[name]" style="width: 250px"></el-input>
@@ -210,16 +220,6 @@
             <!-- <el-form-item label="使用者DN" prop="subjName">
               <el-input v-model="informationCerForm.subjName" :rows="3" type="textarea" placeholder="请输入使用者DN" style="width: 350px" />
             </el-form-item> -->
-            <el-form-item label="签名算法" prop="digetType">
-              <el-select v-model="informationCerForm.digetType" placeholder="请选择签名算法" style="width: 250px">
-                <el-option
-                  v-for="(item, index) in digetTypeList"
-                  :key="'digetTypeList' + index"
-                  :label="item.label"
-                  :value="item.value"
-                ></el-option>
-              </el-select>
-            </el-form-item>
             <el-form-item label="是否产生crl文件" prop="produceCrlFile">
               <el-select v-model="informationCerForm.produceCrlFile" placeholder="" style="width: 250px">
                 <el-option label="是" value="1" disabled />
