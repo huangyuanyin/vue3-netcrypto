@@ -11,7 +11,7 @@
       <template v-for="(item, index) in menuList" :key="index + 'menu'">
         <!-- 一级菜单(无子级) -->
         <el-menu-item v-if="!item.children.length" :index="item.path" :disabled="item.isDisabled">
-          <el-icon>
+          <el-icon v-if="item.icon">
             <component :is="item.icon" v-if="item.icon" />
           </el-icon>
           <template #title>{{ item.title }}</template>
@@ -74,6 +74,7 @@ export default defineComponent({
     opacity: 100%;
     cursor: default;
     border-bottom: 1px solid #ebebeb;
+    justify-content: center;
   }
 
   :deep(.el-menu-item-group__title) {

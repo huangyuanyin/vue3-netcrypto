@@ -89,7 +89,11 @@ const toLink = index => {
 }
 
 const toWork = () => {
-  // router.push("/workbench")
+  if (import.meta.env.MODE === 'production') {
+    window.location.href = 'http://10.4.150.55:8080/'
+  } else {
+    window.location.href = 'http://10.4.150.27:8080'
+  }
 }
 
 const changeDrawer = drawer => {

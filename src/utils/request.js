@@ -13,7 +13,7 @@ service.interceptors.request.use(
   function (config) {
     // 在发送请求之前做些什么
     // 往header头中自动添加token
-    const hastoken = getToken()
+    const hastoken = localStorage.getItem('token')
     if (
       hastoken &&
       config.url !== '/forum/login/' &&
@@ -51,6 +51,8 @@ service.interceptors.request.use(
       case 'crypto':
         config.url = baseUrl.Base_NETCRYPTO_CRYPTO_URL + config.url
         break
+      case 'NetDevOps':
+        config.url = baseUrl.Base_NETDevOps_URL + config.url
     }
     // 请求拦截进来 显示loading效果
     return config

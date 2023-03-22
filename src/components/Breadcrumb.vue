@@ -69,6 +69,8 @@ export default defineComponent({
 .breadcrumb {
   padding-bottom: 20px;
   cursor: pointer;
+  display: flex;
+  align-items: center;
 
   .el-breadcrumb {
     display: inline-flex;
